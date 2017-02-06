@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="client.css" type="text/css" rel="stylesheet">
+    <script src="client.js" type="text/javascript"></script>
+    <script src="serverstub.js" type="text/javascript"></script>
+    <script type=”text/view” id="welcomeview">
+    <div class="layout">
+        <div class="logo"></div>
+        <div class="content">
+            <div class="login">
+             <form name="loginForm" id="loginForm" method="post">
+                <ul>
+                    <li>
+                        <div class="login__form__label"> <label for="loginmail">Email</label></div>
+                        <div class="login__form__element"><input type="email" name="loginmail" id="loginmail" required></input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="loginpass">Password</label></div>
+                        <div class="login__form__element"><input type="password" name="loginpass" id="loginpass" required></input></div>
+                    </li>
+                    <li>
+                         <div class="login__form__label"> <p id="error"></p> </div>
+                        <div class="login__form__element"><input type="submit" name="login" value="Login"></div>
+                    </li>
+                </ul>
+                </form>
+            </div>
+            <div class="signup">
+                <h2>Sign up here!</h2>
+                <form name="signupForm" id="signupForm" method="post">
+                <ul>
+                    <li>
+                        <div class="login__form__label"> <label for="firstname">First name</label></div>
+                        <div class="login__form__element"><input type="text" name="firstname" id="firstname" placeholder="e.g. Tomas" required></input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="familyname">Family name</label></div>
+                        <div class="login__form__element"><input type="text" name="familyname" id="familyname" placeholder="e.g. Waltz" required></input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="gender">Gender</label></div>
+                        <div class="login__form__element">
+                            <select name="gender" id="gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Cat">Cat</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="city">City</label></div>
+                        <div class="login__form__element"><input type="text" name="city" id="city" placeholder="e.g. Linköping" required></input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="country">Country</label></div>
+                        <div class="login__form__element"><input type="text" name="country" id="country" placeholder="e.g. Sweden" required></input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="email">Email</label></div>
+                        <div class="login__form__element"><input type="email" name="email" id="email" placeholder="Enter your email"
+                        required>
+                        </input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="password">Password</label></div>
+                        <div class="login__form__element"><input type="password" name="password" id="password" required></input>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"><label for="repassword">Repeat password</label></div>
+                        <div class="login__form__element"><input type="password" name="repassword" id="repassword" required></div>
+                    </li>
+                    <li>
+                    <div class="login__form__label">
+                        <p id="short"></p>
+                        <p id="mismatch"></p></div>
+                        <div class="login__form__element"><input type="submit" name="signup" id="signup" value="Sign Up"></div>
+                    </li>
+                </ul>
+                </form>
+                <p id="result"> </p>
+            </div>
+        </div>
+    </div>
+
+    </script>
+
+    <script type="text/view" id="profileview">
+
+    <p id="status"> </p>
+    <form name="signoutForm" id="signoutForm" method="post">
+    <input type="submit" name="signout" id="signout" value="Log out">
+    </form>
+
+    <title>Twidder Inc By Benny</title>
+</head>
+
+<body>
+<div id="view">
+    <div class="layout">
+        <div class="menu">
+            <ul>
+                <li><a class="home">Home</a></li>
+                <li>Browse</li>
+                <li>Account</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+html, body {
+    font-family: "Times New Roman", verdana, arial, helvetica, sans-serif;
+}
+
+h2 {
+    text-align:center;
+    margin: 15px 0px 0px 0px;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    line-height: 100%;
+}
+
+#welcomeview {
+    width:1200px;
+    height:500px;
+}
+
+#hi {
+
+}
+
+.layout {
+    align-content: center;
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 336px;
+    height: 396px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 100px;
+    background-image: url(wimage.png);
+    background-repeat: no-repeat;
+    border: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.content {
+    width: 250px;
+    height: 400px;
+    margin-top: 100px;
+    float: right;
+}
+
+.login {
+    height: 86px;
+    border: black;
+    border-style: solid;
+    border-width: 2px;
+    margin-bottom: 10px;
+    padding: 10px 0px 0px 0px
+}
+
+ul {
+    width:100%;
+    height:100%;
+    float:left;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+
+li {
+    height:20px;
+    margin-bottom:0px;
+    list-style:none;
+    clear: both;
+    padding: 5px 0px 0px 0px;
+}
+
+.login__form__label {
+    float: left;
+}
+
+.login__form__label p {
+    font-size:50%;
+    color: red;
+    margin: 0px auto;
+}
+
+
+.login__form__element {
+    float: right;
+}
+
+.login__form__element select {
+    width:100%;
+}
+
+.signup {
+    height: 286px;
+    border: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.menu {
+
+}
+
+.home {
+    display:none;
+}
+.browse {
+    display:none;
+}
+.account {
+    display:none;
+}
