@@ -60,6 +60,7 @@ body {
     padding: 10px 0px 0px 0px
 }
 
+
 ul {
     width:100%;
     height:100%;
@@ -74,6 +75,24 @@ li {
     list-style:none;
     clear: both;
     padding: 5px 0px 0px 0px;
+}
+
+ul.tab {
+    width:100%;
+    height:100%;
+    float:left;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+
+
+ul.tab li {
+    float:left;
+    clear: none;
+}
+
+ul.tab li a:hover {
+    background-color: #ddd;
 }
 
 .login__form__label {

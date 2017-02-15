@@ -5,6 +5,8 @@
     <link href="client.css" type="text/css" rel="stylesheet">
     <script src="client.js" type="text/javascript"></script>
     <script src="serverstub.js" type="text/javascript"></script>
+
+    <!------- WELCOME VIEW ------>
     <script type=”text/view” id="welcomeview">
     <div class="layout">
         <div class="logo"></div>
@@ -87,27 +89,51 @@
 
     </script>
 
+    <!------- PROFILE VIEW ------>
     <script type="text/view" id="profileview">
 
+        <div class="layout">
+
+            <ul class="tab">
+                <li><a href="#" id="homebtn" class="tablinks">Home</a></li>
+                <li><a href="#" id="browsebtn" class="tablinks">Browse</a></li>
+                <li><a href="#" id="accountbtn" class="tablinks">Account</a></li>
+                <li><a href="#" id="signoutbtn">Logout</a></li>
+            </ul>
+
+
+        <!-- HOME -->
+        <div id="home" class="tabcontent">
+
+        </div>
+
+        <!-- BROWSE -->
+        <div id="browse" class="tabcontent">
+
+        </div>
+
+        <!-- ACCOUNT -->
+        <div id="account" class="tabcontent">
+
+        </div>
+
+    </div>
+    <!--
     <p id="status"> </p>
     <form name="signoutForm" id="signoutForm" method="post">
     <input type="submit" name="signout" id="signout" value="Log out">
     </form>
+    -->
+
+    </script>
 
     <title>Twidder Inc By Benny</title>
+
 </head>
 
 <body>
 <div id="view">
-    <div class="layout">
-        <div class="menu">
-            <ul>
-                <li><a class="home">Home</a></li>
-                <li>Browse</li>
-                <li>Account</li>
-            </ul>
-        </div>
-    </div>
+
 </div>
 
 </body>

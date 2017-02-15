@@ -6,18 +6,11 @@ window.onload = function start() {
 
 
     //Choose what view to be seen when loading page
-    /*   if (localStorage.getItem("token")) {
-     document.getElementById("view").innerHTML = document.getElementById("profileview").innerHTML;
-     } else {
-     document.getElementById("view").innerHTML = document.getElementById("welcomeview").innerHTML;
-
-     }*/
-    if (localStorage.getItem("token") == null) {
+    if (localStorage.getItem("token") === null) {
         welcomeView();
     } else {
         profileView();
     }
-
 
     //Login Form
     document.getElementById("loginForm").onsubmit = validateLoginForm;
@@ -26,18 +19,34 @@ window.onload = function start() {
     document.getElementById("password").oninput = validateSignUpPassword;
     document.getElementById("repassword").oninput = validatePasswords;
     document.getElementById("signupForm").onsubmit = validateSignUpForm;
-
 };
 
 function profileView() {
     document.getElementById("view").innerHTML = document.getElementById("profileview").innerHTML;
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    tablinks = document.getElementsByClassName("tablinks");
 
-    document.getElementsByClassName("")
+    for (i = 0; i < tabcontent.length; i++) {
+       // alert("tabcontent: " + tabcontent[i]);
+    }
+
+    for (i = 0; i < tablinks.length; i++) {
+      //  alert("tablinks: " + tablinks[i]);
+    }
+
+
+
+    //Profile view
+    document.getElementById("homebtn").onclick = logout;
+    document.getElementById("browsebtn").onclick = browse;
+    document.getElementById("accountbtn").onclick = account;
+
 
     //Logout
-    document.getElementById("signoutForm").onsubmit = logout;
-   // document.getElementById("signout").onclick = logout;
+    document.getElementById("signoutbtn").onclick = logout;
 }
+
 
 function welcomeView() {
     document.getElementById("view").innerHTML = document.getElementById("welcomeview").innerHTML;
@@ -53,9 +62,10 @@ function validateLoginForm() {
         document.getElementById("error").innerHTML = text;
         return false;
     } else {
-       signIn(email, password); //SIGNS OUT WHEN I SIGN IN. WHY? remove return
+        signIn(email, password);
     }
 }
+
 
 function validateSignUpForm() {
     if (!(validateSignUpPassword() && validatePasswords())) {
@@ -144,8 +154,19 @@ function signIn(email, password) {
 
 function logout() {
     var signOut = serverstub.signOut(localStorage.getItem("token"));
-    document.getElementById("status").innerHTML = signOut.message;
-    alert(localStorage.getItem("token") + "neeeeeej");
+   // document.getElementById("status").innerHTML = signOut.message;
     localStorage.removeItem("token");
-    alert(localStorage.getItem("token")+"hej");
+    welcomeView();
+}
+
+function home() {
+alert("home");
+}
+
+function browse() {
+alert("browse");
+}
+
+function account() {
+alert("account");
 }
