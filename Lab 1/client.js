@@ -3,42 +3,22 @@
  */
 
 window.onload = function start() {
-
-
     //Choose what view to be seen when loading page
     if (localStorage.getItem("token") === null) {
         welcomeView();
     } else {
         profileView();
+
+        //Open Home tab as default
+        document.getElementById("homebtn").click();
     }
-
-    //Login Form
-    document.getElementById("loginForm").onsubmit = validateLoginForm;
-
-    //Sign Up Form
-    document.getElementById("password").oninput = validateSignUpPassword;
-    document.getElementById("repassword").oninput = validatePasswords;
-    document.getElementById("signupForm").onsubmit = validateSignUpForm;
 };
 
 function profileView() {
     document.getElementById("view").innerHTML = document.getElementById("profileview").innerHTML;
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    tablinks = document.getElementsByClassName("tablinks");
-
-    for (i = 0; i < tabcontent.length; i++) {
-       // alert("tabcontent: " + tabcontent[i]);
-    }
-
-    for (i = 0; i < tablinks.length; i++) {
-      //  alert("tablinks: " + tablinks[i]);
-    }
-
-
-
+    clearTab(event);
     //Profile view
-    document.getElementById("homebtn").onclick = logout;
+    document.getElementById("homebtn").onclick = home;
     document.getElementById("browsebtn").onclick = browse;
     document.getElementById("accountbtn").onclick = account;
 
@@ -47,9 +27,35 @@ function profileView() {
     document.getElementById("signoutbtn").onclick = logout;
 }
 
+function clearTab(evt) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    tablinks = document.getElementsByClassName("tablinks");
+
+    //Gömmer alla divs
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    //Rensar klassen active
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    evt.currentTarget.className += " active";
+}
 
 function welcomeView() {
     document.getElementById("view").innerHTML = document.getElementById("welcomeview").innerHTML;
+
+    //Login Form
+    document.getElementById("loginForm").onsubmit = validateLoginForm;
+
+    //Sign Up Form
+    document.getElementById("password").oninput = validateSignUpPassword;
+    document.getElementById("repassword").oninput = validatePasswords;
+    document.getElementById("signupForm").onsubmit = validateSignUpForm;
+
 }
 
 function validateLoginForm() {
@@ -62,10 +68,9 @@ function validateLoginForm() {
         document.getElementById("error").innerHTML = text;
         return false;
     } else {
-        signIn(email, password);
+        return signIn(email, password);
     }
 }
-
 
 function validateSignUpForm() {
     if (!(validateSignUpPassword() && validatePasswords())) {
@@ -76,39 +81,39 @@ function validateSignUpForm() {
 }
 
 function validateSignUpPassword() {
-    var x = document.forms["signupForm"]["password"].value;
+    var x = document.getElementById("password").value;
     var text;
 
     if (x.length < 6) {
         text = "At least 6 characters please.";
-        document.forms["signupForm"]["password"].style.borderColor = "#E34234";
+        document.getElementById("password").style.borderColor = "#E34234";
         document.getElementById("short").innerHTML = text;
         document.getElementById("password").focus();
         return false;
     } else {
         text = "";
         validatePasswords();
-        document.forms["signupForm"]["password"].style.borderColor = "initial";
+        document.getElementById("password").style.borderColor = "initial";
         document.getElementById("short").innerHTML = text;
         return true;
     }
 }
 
 function validatePasswords() {
-    var x = document.forms["signupForm"]["password"].value;
-    var y = document.forms["signupForm"]["repassword"].value;
+    var x = document.getElementById("password").value;
+    var y = document.getElementById("repassword").value;
     var text;
 
     if (x == y) {
         text = "";
-        document.forms["signupForm"]["password"].style.borderColor = "initial";
-        document.forms["signupForm"]["repassword"].style.borderColor = "initial";
+        document.getElementById("password").style.borderColor = "initial";
+        document.getElementById("repassword").style.borderColor = "initial";
         document.getElementById("mismatch").innerHTML = text;
         return true;
     } else {
         text = "Both password must contain the same string.";
-        document.forms["signupForm"]["password"].style.borderColor = "#E34234";
-        document.forms["signupForm"]["repassword"].style.borderColor = "#E34234";
+        document.getElementById("password").style.borderColor = "#E34234";
+        document.getElementById("repassword").style.borderColor = "#E34234";
         document.getElementById("mismatch").innerHTML = text;
         return false;
 
@@ -128,12 +133,12 @@ function signUp() {
     };
 
     var x = serverstub.signUp(user);
-
+    localStorage.setItem("message", x.message);
+    document.getElementById("result").innerHTML = localStorage.getItem("message");
     if (x.success) {
-        document.getElementById("result").innerHTML = x.message;
-        return true;
+        document.forms["signupForm"].reset();
+        return false;
     } else {
-        document.getElementById("result").innerHTML = x.message;
         return false;
     }
 
@@ -145,7 +150,7 @@ function signIn(email, password) {
     if (signIn.success) {
         document.getElementById("error").innerHTML = signIn.message;
         localStorage.setItem("token", signIn.data);
-        alert(localStorage.getItem("token")+"wazzaaaa");
+        alert(localStorage.getItem("token") + "wazzaaaa");
     } else {
         document.getElementById("error").innerHTML = signIn.message;
         return false;
@@ -154,19 +159,109 @@ function signIn(email, password) {
 
 function logout() {
     var signOut = serverstub.signOut(localStorage.getItem("token"));
-   // document.getElementById("status").innerHTML = signOut.message;
+    // document.getElementById("status").innerHTML = signOut.message;
     localStorage.removeItem("token");
     welcomeView();
 }
 
 function home() {
-alert("home");
+    clearTab(event);
+    document.getElementById("home").style.display = "block";
+    document.getElementById("message").setAttribute("maxlength", 256);
+    characterCounter();
+    document.getElementById("message").onkeyup = characterCounter;
+
+    var user = serverstub.getUserDataByToken(localStorage.getItem("token")).data;
+
+    document.getElementById("nameandgender").innerHTML = user.firstname + " " + user.familyname + ", " + user.gender;
+    document.getElementById("email").innerHTML = user.email;
+    document.getElementById("country").innerHTML = user.country;
+    document.getElementById("city").innerHTML = user.city;
+
+
+    document.getElementById("post").onclick = function () {
+        var content = document.getElementById("message").value;
+        if (content.length != 0) {
+            var post = serverstub.postMessage(localStorage.getItem("token"), content, user.email);
+            if (post.success) {
+                alert("success: " + post.message);
+                document.getElementById("message").value = null;
+                document.getElementById("message").setAttribute("placeholder", post.message);
+            } else {
+                alert("fail: " + post.message);
+            }
+        }
+    };
+    updateWall();
+    document.getElementById("update").onclick = updateWall;
+
+    /*
+     <li>3. A list of all posted messages forming a wall.</li>
+     <li>4. A button to reload only the wall in order to see the newly posted messages by other users.
+     </p>*/
+}
+
+function updateWall() {
+    var result = serverstub.getUserMessagesByToken(localStorage.getItem("token"));
+    var text;
+
+    for (i = 0; i < result.data.length; i++) {
+        text += result.data[i].content;
+        text += "<br>/" + result.data[i].writer + "<br><br>";
+    }
+    document.getElementById("entries").innerHTML = text;
+}
+
+function characterCounter() {
+    var characters = document.getElementById("message").value.length;
+    var maxlength = document.getElementById("message").getAttribute("maxlength");
+
+    if (characters > maxlength) {
+        return false;
+    } else {
+        text = maxlength - characters;
+        document.getElementById("counter").innerHTML = "Remaining characters: " + text;
+    }
 }
 
 function browse() {
-alert("browse");
+    clearTab(event);
+    document.getElementById("browse").style.display = "block";
 }
 
 function account() {
-alert("account");
+    clearTab(event);
+    document.getElementById("account").style.display = "block";
+    document.getElementById("newpassword").style.display = "none";
+
+    document.getElementById("changepassword").onclick = newPassword;
+    document.getElementById("signout").onclick = logout;
+    document.getElementById("short").innerHTML = null;
+
+}
+
+function newPassword() {
+    document.getElementById("newpassword").style.display = "block";
+    document.getElementById("save").onclick = save;
+
+}
+
+function save() {
+    var oldpassword, newpassword, changePassword, text;
+
+    oldpassword = document.getElementById("oldpassword").value;
+    newpassword = document.getElementById("password").value;
+
+    if (oldpassword != null && newpassword != null && validateSignUpPassword() && validatePasswords()) {
+        changePassword = serverstub.changePassword(localStorage.getItem("token"), oldpassword, newpassword);
+        text = changePassword.message;
+    }
+
+    if (changePassword.success) {
+        document.getElementById("oldpassword").value = null;
+        document.getElementById("password").value = null;
+        document.getElementById("repassword").value = null;
+    }
+
+    document.getElementById("short").innerHTML = text;
 }

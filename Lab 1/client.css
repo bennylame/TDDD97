@@ -1,10 +1,11 @@
 html, body {
-    font-family: "Times New Roman", verdana, arial, helvetica, sans-serif;
+    font-family: "Lato", verdana, arial, helvetica, sans-serif;
+    font-size: 12px;
 }
 
 h2 {
-    text-align:center;
-    margin: 15px 0px 0px 0px;
+    text-align: center;
+    margin: 15px 0px 15px 0px;
 }
 
 html {
@@ -13,15 +14,6 @@ html {
 
 body {
     line-height: 100%;
-}
-
-#welcomeview {
-    width:1200px;
-    height:500px;
-}
-
-#hi {
-
 }
 
 .layout {
@@ -60,58 +52,24 @@ body {
     padding: 10px 0px 0px 0px
 }
 
-
-ul {
-    width:100%;
-    height:100%;
-    float:left;
-    margin: 0;
-    padding: 10px 0 0 0;
-}
-
-li {
-    height:20px;
-    margin-bottom:0px;
-    list-style:none;
-    clear: both;
-    padding: 5px 0px 0px 0px;
-}
-
-ul.tab {
-    width:100%;
-    height:100%;
-    float:left;
-    margin: 0;
-    padding: 10px 0 0 0;
-}
-
-
-ul.tab li {
-    float:left;
-    clear: none;
-}
-
-ul.tab li a:hover {
-    background-color: #ddd;
-}
-
 .login__form__label {
     float: left;
+    margin-left: 0px;
 }
 
 .login__form__label p {
-    font-size:50%;
+    font-size: 50%;
     color: red;
     margin: 0px auto;
 }
 
-
 .login__form__element {
     float: right;
+    margin: 0px 5px;
 }
 
 .login__form__element select {
-    width:100%;
+    width: 100%;
 }
 
 .signup {
@@ -121,16 +79,167 @@ ul.tab li a:hover {
     border-width: 2px;
 }
 
-.menu {
+ul {
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding: 0px 0 0 0;
+}
+
+li {
+    list-style: none;
+    line-height: 15px;
+}
+
+.content li {
+    height: 20px;
+    margin-bottom: 0px;
+    list-style: none;
+    clear: both;
+    padding: 3px 0px;
+}
+
+.menutab {
+    margin-top: 100px;
+    overflow: hidden;
+    border: 1px solid coral;
+    background-color: blanchedalmond;
+}
+
+.menutab ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menutab .logout {
+    float: right;
+}
+
+.menutab a {
+    font-size: 16px;
+    text-decoration: none;
+    float: left;
+    padding: 14px 16px;
+    color: black;
+}
+
+.menutab a:hover {
+    background-color: lightsalmon;
+}
+
+.menutab a:focus, .active {
+    background-color: lightpink;
+}
+
+/* Style the tab content */
+.tabcontent {
+    padding: 6px 12px;
+    border: 1px solid coral;
+    border-top: none;
+    background-color: blanchedalmond;
+    height: 400px;
+}
+
+#account {
+}
+
+#account li {
+    padding: 14px 0px;
+}
+
+#account a {
+    font-size: 12px;
+    text-decoration: none;
+    padding: 12px 16px;
+    color: black;
+    background-color: white;
+}
+
+#account a:hover {
+    background-color: gray;
+}
+
+#account .save {
+    font-size: 8px;
+    text-decoration: none;
+    padding: 5px 7px;
+    color: black;
+    background-color: white;
+}
+
+#left {
+    float: left;
+    width: 200px;
+}
+
+#newpassword {
+    float: left;
+}
+
+#home {
 
 }
 
-.home {
-    display:none;
+.personalinfo {
+    width:200px;
+    height: 400px;
+    float:left;
 }
-.browse {
-    display:none;
+
+.personalinfo p {
+    font-size:15px;
+    margin-bottom:20px;
 }
-.account {
-    display:none;
+
+.wall {
+    width:300px;
+    height: 400px;
+    float:right;
+    background-color: yellowgreen;
+}
+
+.posts {
+    width: 300px;
+    height: 300px;
+    background-color: whitesmoke;
+    overflow-y: scroll;
+    word-break:break-all;
+}
+
+.message {
+    width: 300px;
+    height: 100px;
+    background-color: blanchedalmond;
+}
+
+.message a {
+    font-size: 8px;
+    text-decoration: none;
+    padding: 5px 7px;
+    color: black;
+    background-color: white;
+}
+
+.message a:hover {
+    background-color: gray;
+}
+
+.message label {
+    font-size: 10px;
+    float:left;
+}
+
+textarea {
+    width:294px;
+    height:80px;
+    resize:none;
+}
+
+.buttons {
+    float:right;
+    width:100px;
+}
+
+#browse {
+
 }

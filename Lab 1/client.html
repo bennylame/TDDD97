@@ -77,53 +77,154 @@
                     <li>
                     <div class="login__form__label">
                         <p id="short"></p>
-                        <p id="mismatch"></p></div>
+                        <p id="mismatch"></p>
+                        <p id="result" style="color: black; font-size:10px;"></p></div>
                         <div class="login__form__element"><input type="submit" name="signup" id="signup" value="Sign Up"></div>
                     </li>
                 </ul>
                 </form>
-                <p id="result"> </p>
             </div>
         </div>
     </div>
+
+
+
 
     </script>
 
     <!------- PROFILE VIEW ------>
     <script type="text/view" id="profileview">
-
-        <div class="layout">
-
-            <ul class="tab">
+    <div class="layout">
+        <div class="menutab">
+            <ul>
+                <li></li>
                 <li><a href="#" id="homebtn" class="tablinks">Home</a></li>
                 <li><a href="#" id="browsebtn" class="tablinks">Browse</a></li>
                 <li><a href="#" id="accountbtn" class="tablinks">Account</a></li>
-                <li><a href="#" id="signoutbtn">Logout</a></li>
+                <li><a href="#" id="signoutbtn" class="logout">Logout</a></li>
             </ul>
+        </div>
 
-
-        <!-- HOME -->
         <div id="home" class="tabcontent">
+            <div class="personalinfo">
+                <h1>HOME</h1>
+                <ul>
+                    <li>
+                        <p id="nameandgender"></p>
+                    </li>
+                    <li>
+                        <p id="email"></p>
+                    </li>
+                    <li>
+                        <p id="country"></p>
+                    </li>
+                    <li>
+                        <p id="city"></p>
+                    </li>
+                </ul>
+            </div>
 
+            <div class="wall">
+                <div class="posts">
+                    <span id="entries"></span>
+                </div>
+                <div class="message">
+                    <textarea id="message" placeholder="Write a post"></textarea>
+                    <label id="counter"></label>
+                    <div class="buttons">
+                        <a href="#" id="post">Post</a>
+                        <a href="#" id="update">Update wall</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- BROWSE -->
         <div id="browse" class="tabcontent">
+             <div class="personalinfo">
+                <h1>BROWSE</h1>
+                <ul>
+                    <li>
+                        <p id="nameandgender"></p>
+                    </li>
+                    <li>
+                        <p id="email"></p>
+                    </li>
+                    <li>
+                        <p id="country"></p>
+                    </li>
+                    <li>
+                        <p id="city"></p>
+                    </li>
+                </ul>
+            </div>
 
+            <div class="wall">
+                <div class="posts">
+                    <span id="entries"></span>
+                </div>
+                <div class="message">
+                    <textarea id="message" placeholder="Write a post"></textarea>
+                    <label id="counter"></label>
+                    <div class="buttons">
+                        <a href="#" id="post">Post</a>
+                        <a href="#" id="update">Update wall</a>
+                    </div>
+                </div>
+            </div>
+           <!-- <h1>BROWSE</h1>
+
+           <li>     The Browse tab shall enable the
+                signed-in user to enter the e-mail address of another user via a text field and a button. When
+                submitted,
+                the found user’s Home page shall be displayed.</li>
+
+             <li>   The view of another user’s Home page shall be
+                functionally identical to your own Home page.</li>
+
+             <li>   In other words, the signed-in user can view the personal
+                information and wall of other users and at the same time post messages on their walls and reload their
+                wall to see whether there is any new posted messages on their walls.
+                To get it done, you also need to use the methods provided by “serverstub.js”.</li>
+                -->
         </div>
 
         <!-- ACCOUNT -->
         <div id="account" class="tabcontent">
-
+            <h1>ACCOUNT</h1>
+            <div id="left">
+                <ul>
+                    <li><a id="changepassword">Change password</a></li>
+                    <li><a id="signout">Logout</a></li>
+                </ul>
+            </div>
+            <div id="newpassword">
+                <li>
+                    <div class="login__form__label"><label for="oldpassword">Old password</label></div>
+                    <div class="login__form__element"><input type="password" name="password" id="oldpassword" required>
+                    </div>
+                </li>
+                <li>
+                    <div class="login__form__label"><label for="newpassword">New password</label></div>
+                    <div class="login__form__element"><input type="password" name="password" id="password" required>
+                    </div>
+                </li>
+                <li>
+                    <div class="login__form__label"><label for="repassword">Repeat new password</label></div>
+                    <div class="login__form__element"><input type="password" name="repassword" id="repassword" required>
+                    </div>
+                </li>
+                <li>
+                    <div class="login__form__element"><a id="save" class="save">Save</a></div>
+                </li>
+                <p id="short"></p>
+                <p id="mismatch"></p>
+            </div>
         </div>
-
     </div>
-    <!--
-    <p id="status"> </p>
-    <form name="signoutForm" id="signoutForm" method="post">
-    <input type="submit" name="signout" id="signout" value="Log out">
-    </form>
-    -->
+</div>
+
+
 
     </script>
 
@@ -133,6 +234,7 @@
 
 <body>
 <div id="view">
+
 
 </div>
 
