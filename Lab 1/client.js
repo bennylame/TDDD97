@@ -116,7 +116,6 @@ function validatePasswords() {
         document.getElementById("repassword").style.borderColor = "#E34234";
         document.getElementById("mismatch").innerHTML = text;
         return false;
-
     }
 }
 
@@ -164,14 +163,16 @@ function logout() {
     welcomeView();
 }
 
+
 function home() {
+    var token = localStorage.getItem("token");
     clearTab(event);
     document.getElementById("home").style.display = "block";
     document.getElementById("message").setAttribute("maxlength", 256);
     characterCounter();
     document.getElementById("message").onkeyup = characterCounter;
 
-    var user = serverstub.getUserDataByToken(localStorage.getItem("token")).data;
+    var user = serverstub.getUserDataByToken(token).data;
 
     document.getElementById("nameandgender").innerHTML = user.firstname + " " + user.familyname + ", " + user.gender;
     document.getElementById("email").innerHTML = user.email;
@@ -182,7 +183,7 @@ function home() {
     document.getElementById("post").onclick = function () {
         var content = document.getElementById("message").value;
         if (content.length != 0) {
-            var post = serverstub.postMessage(localStorage.getItem("token"), content, user.email);
+            var post = serverstub.postMessage(token, content, user.email);
             if (post.success) {
                 alert("success: " + post.message);
                 document.getElementById("message").value = null;
@@ -202,6 +203,7 @@ function home() {
 }
 
 function updateWall() {
+
     var result = serverstub.getUserMessagesByToken(localStorage.getItem("token"));
     var text;
 
@@ -225,8 +227,95 @@ function characterCounter() {
 }
 
 function browse() {
+    var token = localStorage.getItem("token");
     clearTab(event);
+    document.getElementById("nameandgenderB").innerHTML = null;
+    document.getElementById("emailB").innerHTML = null;
+    document.getElementById("countryB").innerHTML = null;
+    document.getElementById("cityB").innerHTML = null;
+    document.getElementById("entriesB").innerHTML = null;
+    document.getElementById("browseUser").value = null;
+    document.getElementById("messageB").value = null;
+
     document.getElementById("browse").style.display = "block";
+    document.getElementById("messageB").setAttribute("maxlength", 256);
+    document.getElementById("counterB").innerHTML = "Remaining characters: 256";
+    document.getElementById("messageB").onkeyup = function () {
+        var characters = document.getElementById("messageB").value.length;
+        var maxlength = document.getElementById("messageB").getAttribute("maxlength");
+
+        if (characters > maxlength) {
+            return false;
+        } else {
+            text = maxlength - characters;
+            document.getElementById("counterB").innerHTML = "Remaining characters: " + text;
+        }
+    };
+
+    var findUser = document.getElementById("findUser");
+    findUser.onclick = showUser;
+
+}
+
+function showUser() {
+    var token = localStorage.getItem("token");
+    var email = document.getElementById("browseUser").value;
+
+    var user = serverstub.getUserDataByEmail(token, email);
+
+    if (user.success) {
+        document.getElementById("nameandgenderB").innerHTML = user.data.firstname + " " + user.data.familyname + ", " + user.data.gender;
+        document.getElementById("emailB").innerHTML = user.data.email;
+        document.getElementById("countryB").innerHTML = user.data.country;
+        document.getElementById("cityB").innerHTML = user.data.city;
+
+
+        document.getElementById("postB").onclick = function () {
+            var content = document.getElementById("messageB").value;
+            if (content.length != 0) {
+                var post = serverstub.postMessage(token, content, email);
+                if (post.success) {
+                    alert("success: " + post.message);
+                    document.getElementById("messageB").value = null;
+                    document.getElementById("messageB").setAttribute("placeholder", post.message);
+                } else {
+                    alert("fail: " + post.message);
+                }
+            }
+        };
+
+        //Update wall
+        var result = serverstub.getUserMessagesByEmail(token, email);
+        var text;
+
+        for (i = 0; i < result.data.length; i++) {
+            text += result.data[i].content;
+            text += "<br>/" + result.data[i].writer + "<br><br>";
+        }
+        document.getElementById("entriesB").innerHTML = text;
+
+
+        document.getElementById("updateB").onclick = function () {
+            //Update wall
+            var result = serverstub.getUserMessagesByEmail(token, email);
+            var text;
+
+            for (i = 0; i < result.data.length; i++) {
+                text += result.data[i].content;
+                text += "<br>/" + result.data[i].writer + "<br><br>";
+            }
+            document.getElementById("entriesB").innerHTML = text;
+
+        }
+
+    } else {
+        document.getElementById("nameandgenderB").innerHTML = user.message;
+        document.getElementById("emailB").innerHTML = null;
+        document.getElementById("countryB").innerHTML = null;
+        document.getElementById("cityB").innerHTML = null;
+        document.getElementById("messageB").value = null;
+
+    }
 }
 
 function account() {

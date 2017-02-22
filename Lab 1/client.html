@@ -90,6 +90,9 @@
 
 
 
+
+
+
     </script>
 
     <!------- PROFILE VIEW ------>
@@ -145,48 +148,38 @@
                 <h1>BROWSE</h1>
                 <ul>
                     <li>
-                        <p id="nameandgender"></p>
+                        <p id="nameandgenderB"></p>
                     </li>
                     <li>
-                        <p id="email"></p>
+                        <p id="emailB"></p>
                     </li>
                     <li>
-                        <p id="country"></p>
+                        <p id="countryB"></p>
                     </li>
                     <li>
-                        <p id="city"></p>
+                        <p id="cityB"></p>
                     </li>
                 </ul>
             </div>
 
             <div class="wall">
-                <div class="posts">
-                    <span id="entries"></span>
-                </div>
-                <div class="message">
-                    <textarea id="message" placeholder="Write a post"></textarea>
-                    <label id="counter"></label>
-                    <div class="buttons">
-                        <a href="#" id="post">Post</a>
-                        <a href="#" id="update">Update wall</a>
-                    </div>
+              <div class="search">
+                  <input type="text" name="browseUser" id="browseUser" required>
+                  <a id="findUser">Search</a>
+              </div>
+              <div class="posts">
+                  <span id="entriesB"></span>
+              </div>
+              <div class="message">
+                   <textarea id="messageB" placeholder="Write a post"></textarea>
+                   <label id="counterB"></label>
+                   <div class="buttons">
+                       <a href="#" id="postB">Post</a>
+                       <a href="#" id="updateB">Update wall</a>
+                   </div>
                 </div>
             </div>
-           <!-- <h1>BROWSE</h1>
 
-           <li>     The Browse tab shall enable the
-                signed-in user to enter the e-mail address of another user via a text field and a button. When
-                submitted,
-                the found user’s Home page shall be displayed.</li>
-
-             <li>   The view of another user’s Home page shall be
-                functionally identical to your own Home page.</li>
-
-             <li>   In other words, the signed-in user can view the personal
-                information and wall of other users and at the same time post messages on their walls and reload their
-                wall to see whether there is any new posted messages on their walls.
-                To get it done, you also need to use the methods provided by “serverstub.js”.</li>
-                -->
         </div>
 
         <!-- ACCOUNT -->
@@ -223,6 +216,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 

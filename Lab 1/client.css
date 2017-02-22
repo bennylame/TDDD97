@@ -137,7 +137,7 @@ li {
     border: 1px solid coral;
     border-top: none;
     background-color: blanchedalmond;
-    height: 400px;
+    height: 100%;
 }
 
 #account {
@@ -176,10 +176,6 @@ li {
     float: left;
 }
 
-#home {
-
-}
-
 .personalinfo {
     width:200px;
     height: 400px;
@@ -193,14 +189,14 @@ li {
 
 .wall {
     width:300px;
-    height: 400px;
+    height: 450px;
     float:right;
-    background-color: yellowgreen;
+    background-color: inherit;
 }
 
 .posts {
     width: 300px;
-    height: 300px;
+    height: 350px;
     background-color: whitesmoke;
     overflow-y: scroll;
     word-break:break-all;
@@ -231,7 +227,7 @@ li {
 
 textarea {
     width:294px;
-    height:80px;
+    height:70px;
     resize:none;
 }
 
@@ -240,6 +236,25 @@ textarea {
     width:100px;
 }
 
-#browse {
+.search {
+    margin: 10px 0px;
+    width: inherit;
+    height: 20px;
+    line-height: 20px;
+}
 
+.search input {
+    width:210px;
+}
+
+.search a {
+    font-size: 12px;
+    text-decoration: none;
+    padding: 2px 15px;
+    color: black;
+    background-color: white;
+}
+
+.search a:hover {
+    background-color: gray;
 }
