@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ca56ce8-661e-4d88-97c3-86d5fecfe1d1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 1/client.css" afterPath="$PROJECT_DIR$/Lab 1/client.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 1/client.html" afterPath="$PROJECT_DIR$/Lab 1/client.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 1/client.js" afterPath="$PROJECT_DIR$/Lab 1/client.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,7 +41,7 @@
       <file leaf-file-name="client.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab 1/client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
+            <state relative-caret-position="408">
               <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
               <folding />
             </state>
@@ -53,8 +51,8 @@
       <file leaf-file-name="client.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lab 1/client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="277" column="54" lean-forward="true" selection-start-line="277" selection-start-column="54" selection-end-line="277" selection-end-column="54" />
+            <state relative-caret-position="210">
+              <caret line="192" column="13" lean-forward="false" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
               <folding>
                 <element signature="e#80#338#0" expanded="false" />
                 <element signature="n#!!block;n#profileView#0" expanded="false" />
@@ -67,7 +65,7 @@
                 <element signature="n#!!block;n#signUp#0" expanded="false" />
                 <element signature="n#!!block;n#signIn#0" expanded="false" />
                 <element signature="n#!!block;n#logout#0" expanded="false" />
-                <element signature="e#5794#6310#0" expanded="false" />
+                <element signature="e#5735#6152#0" expanded="false" />
                 <element signature="n#!!block;n#account#0" expanded="false" />
                 <element signature="n#!!block;n#newPassword#0" expanded="false" />
                 <element signature="n#!!block;n#save#0" expanded="false" />
@@ -144,8 +142,8 @@
       <find>textare</find>
       <find>un</find>
       <find>localstorage.getItem&quot;token</find>
-      <find>wall</find>
       <find>getuserdatabyemail</find>
+      <find>wall</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -573,7 +571,7 @@
             <element signature="n#!!block;n#signUp#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#logout#0" expanded="false" />
-            <element signature="e#5794#6310#0" expanded="false" />
+            <element signature="e#5735#6152#0" expanded="false" />
             <element signature="n#!!block;n#account#0" expanded="false" />
             <element signature="n#!!block;n#newPassword#0" expanded="false" />
             <element signature="n#!!block;n#save#0" expanded="false" />
@@ -646,6 +644,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 1/client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 1/serverstub.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="78" column="26" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Lab 1/client.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -660,26 +674,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 1/serverstub.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="78" column="26" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 1/client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lab 1/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="277" column="54" lean-forward="true" selection-start-line="277" selection-start-column="54" selection-end-line="277" selection-end-column="54" />
+        <state relative-caret-position="210">
+          <caret line="192" column="13" lean-forward="false" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
           <folding>
             <element signature="e#80#338#0" expanded="false" />
             <element signature="n#!!block;n#profileView#0" expanded="false" />
@@ -692,7 +690,7 @@
             <element signature="n#!!block;n#signUp#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#logout#0" expanded="false" />
-            <element signature="e#5794#6310#0" expanded="false" />
+            <element signature="e#5735#6152#0" expanded="false" />
             <element signature="n#!!block;n#account#0" expanded="false" />
             <element signature="n#!!block;n#newPassword#0" expanded="false" />
             <element signature="n#!!block;n#save#0" expanded="false" />

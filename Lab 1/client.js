@@ -149,7 +149,6 @@ function signIn(email, password) {
     if (signIn.success) {
         document.getElementById("error").innerHTML = signIn.message;
         localStorage.setItem("token", signIn.data);
-        alert(localStorage.getItem("token") + "wazzaaaa");
     } else {
         document.getElementById("error").innerHTML = signIn.message;
         return false;
@@ -185,11 +184,9 @@ function home() {
         if (content.length != 0) {
             var post = serverstub.postMessage(token, content, user.email);
             if (post.success) {
-                alert("success: " + post.message);
                 document.getElementById("message").value = null;
                 document.getElementById("message").setAttribute("placeholder", post.message);
             } else {
-                alert("fail: " + post.message);
             }
         }
     };
@@ -275,11 +272,10 @@ function showUser() {
             if (content.length != 0) {
                 var post = serverstub.postMessage(token, content, email);
                 if (post.success) {
-                    alert("success: " + post.message);
                     document.getElementById("messageB").value = null;
                     document.getElementById("messageB").setAttribute("placeholder", post.message);
                 } else {
-                    alert("fail: " + post.message);
+
                 }
             }
         };
