@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="client.css" type="text/css" rel="stylesheet">
+    <script src="client.js" type="text/javascript"></script>
+    <script src="serverstub.js" type="text/javascript"></script>
+
+    <!------- WELCOME VIEW ------>
+    <script type=”text/view” id="welcomeview">
+    <div class="layout">
+        <div class="logo"></div>
+        <div class="content">
+            <div class="login">
+             <form name="loginForm" id="loginForm" method="post">
+                <ul>
+                    <li>
+                        <div class="login__form__label"> <label for="loginmail">Email</label></div>
+                        <div class="login__form__element"><input type="email" name="loginmail" id="loginmail" required></input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="loginpass">Password</label></div>
+                        <div class="login__form__element"><input type="password" name="loginpass" id="loginpass" required></input></div>
+                    </li>
+                    <li>
+                         <div class="login__form__label"> <p id="error"></p> </div>
+                        <div class="login__form__element"><input type="submit" name="login" value="Login"></div>
+                    </li>
+                </ul>
+                </form>
+            </div>
+            <div class="signup">
+                <h2>Sign up here!</h2>
+                <form name="signupForm" id="signupForm" method="post">
+                <ul>
+                    <li>
+                        <div class="login__form__label"> <label for="firstname">First name</label></div>
+                        <div class="login__form__element"><input type="text" name="firstname" id="firstname" placeholder="e.g. Tomas" required></input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="familyname">Family name</label></div>
+                        <div class="login__form__element"><input type="text" name="familyname" id="familyname" placeholder="e.g. Waltz" required></input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="gender">Gender</label></div>
+                        <div class="login__form__element">
+                            <select name="gender" id="gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Cat">Cat</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="city">City</label></div>
+                        <div class="login__form__element"><input type="text" name="city" id="city" placeholder="e.g. Linköping" required></input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="country">Country</label></div>
+                        <div class="login__form__element"><input type="text" name="country" id="country" placeholder="e.g. Sweden" required></input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="email">Email</label></div>
+                        <div class="login__form__element"><input type="email" name="email" id="email" placeholder="Enter your email"
+                        required>
+                        </input></div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"> <label for="password">Password</label></div>
+                        <div class="login__form__element"><input type="password" name="password" id="password" required></input>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="login__form__label"><label for="repassword">Repeat password</label></div>
+                        <div class="login__form__element"><input type="password" name="repassword" id="repassword" required></div>
+                    </li>
+                    <li>
+                    <div class="login__form__label">
+                        <p id="short"></p>
+                        <p id="mismatch"></p>
+                        <p id="result" style="color: black; font-size:10px;"></p></div>
+                        <div class="login__form__element"><input type="submit" name="signup" id="signup" value="Sign Up"></div>
+                    </li>
+                </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    </script>
+
+    <!------- PROFILE VIEW ------>
+    <script type="text/view" id="profileview">
+    <div class="layout">
+        <div class="menutab">
+            <ul>
+                <li></li>
+                <li><a href="#" id="homebtn" class="tablinks">Home</a></li>
+                <li><a href="#" id="browsebtn" class="tablinks">Browse</a></li>
+                <li><a href="#" id="accountbtn" class="tablinks">Account</a></li>
+                <li><a href="#" id="signoutbtn" class="logout">Logout</a></li>
+            </ul>
+        </div>
+
+        <div id="home" class="tabcontent">
+            <div class="personalinfo">
+                <h1>HOME</h1>
+                <ul>
+                    <li>
+                        <p id="nameandgender"></p>
+                    </li>
+                    <li>
+                        <p id="email"></p>
+                    </li>
+                    <li>
+                        <p id="country"></p>
+                    </li>
+                    <li>
+                        <p id="city"></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="wall">
+                <div class="posts">
+                    <span id="entries"></span>
+                </div>
+                <div class="message">
+                    <textarea id="message" placeholder="Write a post"></textarea>
+                    <label id="counter"></label>
+                    <div class="buttons">
+                        <a href="#" id="post">Post</a>
+                        <a href="#" id="update">Update wall</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BROWSE -->
+        <div id="browse" class="tabcontent">
+             <div class="personalinfo">
+                <h1>BROWSE</h1>
+                <ul>
+                    <li>
+                        <p id="nameandgenderB"></p>
+                    </li>
+                    <li>
+                        <p id="emailB"></p>
+                    </li>
+                    <li>
+                        <p id="countryB"></p>
+                    </li>
+                    <li>
+                        <p id="cityB"></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="wall">
+              <div class="search">
+                  <input type="text" name="browseUser" id="browseUser" required>
+                  <a id="findUser">Search</a>
+              </div>
+              <div class="posts">
+                  <span id="entriesB"></span>
+              </div>
+              <div class="message">
+                   <textarea id="messageB" placeholder="Write a post"></textarea>
+                   <label id="counterB"></label>
+                   <div class="buttons">
+                       <a href="#" id="postB">Post</a>
+                       <a href="#" id="updateB">Update wall</a>
+                   </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ACCOUNT -->
+        <div id="account" class="tabcontent">
+            <h1>ACCOUNT</h1>
+            <div id="left">
+                <ul>
+                    <li><a id="changepassword">Change password</a></li>
+                    <li><a id="signout">Logout</a></li>
+                </ul>
+            </div>
+            <div id="newpassword">
+                <li>
+                    <div class="login__form__label"><label for="oldpassword">Old password</label></div>
+                    <div class="login__form__element"><input type="password" name="password" id="oldpassword" required>
+                    </div>
+                </li>
+                <li>
+                    <div class="login__form__label"><label for="newpassword">New password</label></div>
+                    <div class="login__form__element"><input type="password" name="password" id="password" required>
+                    </div>
+                </li>
+                <li>
+                    <div class="login__form__label"><label for="repassword">Repeat new password</label></div>
+                    <div class="login__form__element"><input type="password" name="repassword" id="repassword" required>
+                    </div>
+                </li>
+                <li>
+                    <div class="login__form__element"><a id="save" class="save">Save</a></div>
+                </li>
+                <p id="short"></p>
+                <p id="mismatch"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    </script>
+
+    <title>Twidder Inc By Benny</title>
+
+</head>
+
+<body>
+<div id="view">
+
+
+</div>
+
+</body>
+</html>
