@@ -1,20 +1,20 @@
 drop table if exists users;
-create table users (
-  email TEXT PRIMARY KEY ,
+CREATE TABLE users (
+  email TEXT PRIMARY KEY,
   password TEXT NOT NULL,
-  firstname text,
-  familyname text,
-  gender text,
-  city text,
-  country text
+  firstname TEXT NOT NULL,
+  familyname TEXT NOT NULL,
+  gender TEXT NOT NULL,
+  city TEXT NOT NULL,
+  country TEXT NOT NULL
 );
 
 drop table if exists messages;
-create table messages (
-  id integer PRIMARY KEY AUTOINCREMENT ,
-  content TEXT NOT NULL ,
-  toUser INTEGER NOT NULL ,
-  fromUser INTEGER NOT NULL ,
-  FOREIGN KEY(toUser) REFERENCES users(id),
-  FOREIGN KEY(fromUser) REFERENCES users(id)
+CREATE TABLE messages (
+  id INTEGER PRIMARY KEY autoincrement,
+  message TEXT NOT NULL,
+  fromUser TEXT NOT NULL,
+  toUser TEXT NOT NULL,
+  FOREIGN KEY (fromUser) REFERENCES users(id),
+  FOREIGN KEY (toUser) REFERENCES users(id)
 );
