@@ -1,4 +1,4 @@
-from flask import Flask, g, request, jsonify, redirect
+from flask import Flask, g, request, jsonify
 import database_helper
 import os, binascii
 
@@ -28,8 +28,7 @@ def sign_in():
         token = binascii.b2a_hex(os.urandom(15))
         logged_in_users[token] = email
         return jsonify(
-            {"success": True, "message": "Successfully signed in.", "data": token, "kahpa": logged_in_users[token],
-             "hoe": logged_in_users})
+            {"success": True, "message": "Successfully signed in.", "data": token})
     else:
         return jsonify({"success": False, "message": "Wrong username or password."})
 
@@ -44,7 +43,7 @@ def sign_up():
     city = request.form['city']
     country = request.form['country']
 
-    is_taken = database_helper.is_taken(email)
+    is_taken = database_helper.user_exist(email)
     if (is_taken):
         return jsonify({"success": False, "message": "User already exists."})
     else:
@@ -62,7 +61,6 @@ def sign_out():
         return jsonify({"success": False, "message": "You are not signed in."})
 
 
-
 @app.route('/change-password', methods=['POST'])
 def change_password():
     token = request.form['token']
@@ -73,40 +71,77 @@ def change_password():
         return jsonify({"success": False, "message": "You are not logged in."})
     else:
         email = logged_in_users[token]
-        is_valid = database_helper.is_valid_user(email,old_password)
+        is_valid = database_helper.is_valid_user(email, old_password)
         if (is_valid):
-            database_helper.change_password(email,new_password)
+            database_helper.change_password(email, new_password)
             return jsonify({"success": True, "message": "Password changed."})
         else:
             return jsonify({"success": False, "message": "Wrong password."})
 
 
+            # Shows logged in users
 
 
-    #Shows logged in users
 @app.route('/get-users', methods=['GET'])
 def get_users():
     return jsonify(users=logged_in_users)
 
-#
-# @app.route('/get-user-data-by-token', methods=['GET'])
-# def get_user_data_by_token(token):
-#     return 'getuserdatabytoken'
-#
-#
-# @app.route('/')
-# def get_user_data_by_email(token, email):
-#     return 'getuserdatabyemail'
-#
-#
-# @app.route('/')
-# def get_user_messages_by_token(token):
-#     return 'getusermessagesbytoken'
-#
-#
-# @app.route('/')
-# def get_user_messages_by_email(token, email):
-#     return 'getusermessagesbyemail'
+
+@app.route('/get-user-data-by-token/<token>', methods=['GET'])
+def get_user_data_by_token(token):
+    email = logged_in_users[token]
+    return get_user_data_by_email(token, email)
+
+
+@app.route('/get-user-data-by-email/<token>/<email>', methods=['GET'])
+def get_user_data_by_email(token, email):
+    if token in logged_in_users:
+        user_data = database_helper.get_user_data(email)
+        if user_data:
+            return jsonify({"success": True, "message": "User data retrieved.", "data": user_data})
+        else:
+            return jsonify({"success": False, "message": "No such user."})
+    else:
+        return jsonify({"success": False, "message": "You are not signed in."})
+
+
+
+@app.route('/get-user-messages-by-token/<token>', methods=['GET'])
+def get_user_messages_by_token(token):
+    email = logged_in_users[token]
+    return get_user_messages_by_email(token, email);
+
+
+
+@app.route('/get-user-messages-by-email/<token>/<email>', methods=['GET'])
+def get_user_messages_by_email(token, email):
+    if token in logged_in_users:
+        messages = database_helper.get_messages(email)
+        user_exist = database_helper.user_exist(email)
+        if user_exist:
+            return jsonify({"success": True, "message": "User messages retrieved.", "data": messages})
+        else:
+            return jsonify({"success": False, "message": "No such user."})
+    else:
+        return jsonify({"success": False, "message": "You are not signed in."})
+
+@app.route('/post-message', methods=['POST'])
+def post_message():
+    message = request.form['message']
+    token = request.form['token']
+    toUser = request.form['toUser']
+
+    user_exist = database_helper.user_exist(toUser)
+    if token in logged_in_users:
+        fromUser = logged_in_users[token]
+        if (user_exist):
+            database_helper.add_message(message, fromUser, toUser)
+            return jsonify({"success": True, "message": "Message posted"})
+        else:
+            return jsonify({"success": False, "message": "No such user."})
+    else:
+        return jsonify({"success": False, "message": "You are not signed in."})
+
 
 
 if __name__ == '__main__':

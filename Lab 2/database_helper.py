@@ -40,7 +40,7 @@ def add_user(email, password, firstname, familyname, gender, city, country):
 
 
     #Checks so that user is not taken
-def is_taken(email):
+def user_exist(email):
     user = query_db('SELECT email FROM users WHERE email = ?', [email], one=True)
     if user is None:
         return False
@@ -49,7 +49,7 @@ def is_taken(email):
 
     #Checks login
 def is_valid_user(email, password):
-    user = query_db('select email, password from users where email = ? and password = ?',
+    user = query_db('SELECT email, password FROM users WHERE email = ? AND password = ?',
                     [email, password], one=True)
     if user is None:
         return False
@@ -57,5 +57,19 @@ def is_valid_user(email, password):
         return True
 
 def change_password(email, password):
-    query_db('update users set password = ? where email = ?', [password, email], one=True)
+    query_db('UPDATE users SET password = ? WHERE email = ?', [password, email], one=True)
     get_db().commit()
+
+def get_user_data(email):
+    user = query_db('SELECT email, firstname, familyname, gender, city, country FROM users WHERE email=?', [email])
+    return user
+
+def add_message(message, fromUser, toUser):
+    query_db('INSERT INTO messages(message, fromUser, toUser) VALUES (?,?,?)', [message, fromUser, toUser])
+    get_db().commit()
+
+
+def get_messages(email):
+    messages = query_db('SELECT message, fromUser FROM messages where toUser = ?', [email])
+    get_db().commit()
+    return messages

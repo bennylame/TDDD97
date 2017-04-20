@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ca56ce8-661e-4d88-97c3-86d5fecfe1d1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lab 2/database.db" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 2/database.db" afterPath="$PROJECT_DIR$/Lab 2/database.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 2/database_helper.py" afterPath="$PROJECT_DIR$/Lab 2/database_helper.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 2/schema.sql" afterPath="$PROJECT_DIR$/Lab 2/schema.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 2/server.py" afterPath="$PROJECT_DIR$/Lab 2/server.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,12 +30,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="client.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lab 2/static/client.html">
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lab 2/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1410">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-168">
+              <caret line="99" column="15" lean-forward="false" selection-start-line="99" selection-start-column="15" selection-end-line="99" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,21 +45,9 @@
       <file leaf-file-name="serverstub.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab 2/static/serverstub.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="166" column="13" lean-forward="true" selection-start-line="155" selection-start-column="11" selection-end-line="166" selection-end-column="13" />
+            <state relative-caret-position="270">
+              <caret line="100" column="43" lean-forward="true" selection-start-line="100" selection-start-column="14" selection-end-line="100" selection-end-column="43" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Lab 2/server.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="92" column="34" lean-forward="false" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -67,16 +55,21 @@
       <file leaf-file-name="database_helper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab 2/database_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+            <state relative-caret-position="510">
+              <caret line="72" column="76" lean-forward="false" selection-start-line="72" selection-start-column="76" selection-end-line="72" selection-end-column="76" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1492550793000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
-                <marker date="1492550793000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
-                <marker date="1492550793000" expanded="true" signature="1020:1059" ph="SELECT email... users" />
-                <marker date="1492550793000" expanded="true" signature="1229:1278" ph="select * fro... users" />
-                <marker date="1492550793000" expanded="true" signature="1229:1295" ph="select email... users" />
-                <marker date="1492550793000" expanded="true" signature="1472:1517" ph="update users... " />
+                <marker date="1492696884000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
+                <marker date="1492696884000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
+                <marker date="1492696884000" expanded="true" signature="1022:1061" ph="SELECT email... users" />
+                <marker date="1492696884000" expanded="true" signature="1231:1297" ph="SELECT email... users" />
+                <marker date="1492696884000" expanded="true" signature="1474:1519" ph="UPDATE users... " />
+                <marker date="1492696884000" expanded="true" signature="1480:1519" ph="update users... " />
+                <marker date="1492696884000" expanded="true" signature="1621:1704" ph="SELECT email... users" />
+                <marker date="1492696884000" expanded="true" signature="1627:1704" ph="select email... users" />
+                <marker date="1492696884000" expanded="true" signature="1791:1847" ph="INSERT INTO messages... " />
+                <marker date="1492696884000" expanded="true" signature="1791:1853" ph="INSERT INTO messages... " />
+                <marker date="1492696884000" expanded="true" signature="1959:2014" ph="SELECT messa... messages" />
               </folding>
             </state>
           </provider>
@@ -107,15 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tabcontent</find>
-      <find>local</find>
-      <find>setattr</find>
-      <find>undefined</find>
-      <find>posts</find>
-      <find>textare</find>
-      <find>un</find>
-      <find>localstorage.getItem&quot;token</find>
-      <find>getuserdatabyemail</find>
       <find>wall</find>
       <find>database</find>
       <find>browse</find>
@@ -137,6 +121,15 @@
       <find>signout</find>
       <find>changepass</find>
       <find>token</find>
+      <find>getuserdatabytoke</find>
+      <find>email =</find>
+      <find>hoe</find>
+      <find>kahpa</find>
+      <find>get_user</find>
+      <find>is_taken</find>
+      <find>user_exis</find>
+      <find>is_valid_</find>
+      <find>postme</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -545,6 +538,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20907618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997006" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -556,7 +550,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
@@ -574,16 +567,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Lab 2/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TDDD97.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -598,12 +581,17 @@
           <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1492550793000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
-            <marker date="1492550793000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
-            <marker date="1492550793000" expanded="true" signature="1020:1059" ph="SELECT email... users" />
-            <marker date="1492550793000" expanded="true" signature="1229:1278" ph="select * fro... users" />
-            <marker date="1492550793000" expanded="true" signature="1229:1295" ph="select email... users" />
-            <marker date="1492550793000" expanded="true" signature="1472:1517" ph="update users... " />
+            <marker date="1492696884000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
+            <marker date="1492696884000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
+            <marker date="1492696884000" expanded="true" signature="1022:1061" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1231:1297" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1474:1519" ph="UPDATE users... " />
+            <marker date="1492696884000" expanded="true" signature="1480:1519" ph="update users... " />
+            <marker date="1492696884000" expanded="true" signature="1621:1704" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1627:1704" ph="select email... users" />
+            <marker date="1492696884000" expanded="true" signature="1791:1847" ph="INSERT INTO messages... " />
+            <marker date="1492696884000" expanded="true" signature="1791:1853" ph="INSERT INTO messages... " />
+            <marker date="1492696884000" expanded="true" signature="1959:2014" ph="SELECT messa... messages" />
           </folding>
         </state>
       </provider>
@@ -645,7 +633,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -664,12 +652,17 @@
           <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1492550793000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
-            <marker date="1492550793000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
-            <marker date="1492550793000" expanded="true" signature="1020:1059" ph="SELECT email... users" />
-            <marker date="1492550793000" expanded="true" signature="1229:1278" ph="select * fro... users" />
-            <marker date="1492550793000" expanded="true" signature="1229:1295" ph="select email... users" />
-            <marker date="1492550793000" expanded="true" signature="1472:1517" ph="update users... " />
+            <marker date="1492696884000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
+            <marker date="1492696884000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
+            <marker date="1492696884000" expanded="true" signature="1022:1061" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1231:1297" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1474:1519" ph="UPDATE users... " />
+            <marker date="1492696884000" expanded="true" signature="1480:1519" ph="update users... " />
+            <marker date="1492696884000" expanded="true" signature="1621:1704" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1627:1704" ph="select email... users" />
+            <marker date="1492696884000" expanded="true" signature="1791:1847" ph="INSERT INTO messages... " />
+            <marker date="1492696884000" expanded="true" signature="1791:1853" ph="INSERT INTO messages... " />
+            <marker date="1492696884000" expanded="true" signature="1959:2014" ph="SELECT messa... messages" />
           </folding>
         </state>
       </provider>
@@ -711,7 +704,7 @@
         <state relative-caret-position="330">
           <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -722,12 +715,17 @@
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1492550793000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
-            <marker date="1492550793000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
-            <marker date="1492550793000" expanded="true" signature="1020:1059" ph="SELECT email... users" />
-            <marker date="1492550793000" expanded="true" signature="1229:1278" ph="select * fro... users" />
-            <marker date="1492550793000" expanded="true" signature="1229:1295" ph="select email... users" />
-            <marker date="1492550793000" expanded="true" signature="1472:1517" ph="update users... " />
+            <marker date="1492696884000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
+            <marker date="1492696884000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
+            <marker date="1492696884000" expanded="true" signature="1022:1061" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1231:1297" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1474:1519" ph="UPDATE users... " />
+            <marker date="1492696884000" expanded="true" signature="1480:1519" ph="update users... " />
+            <marker date="1492696884000" expanded="true" signature="1621:1704" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1627:1704" ph="select email... users" />
+            <marker date="1492696884000" expanded="true" signature="1791:1847" ph="INSERT INTO messages... " />
+            <marker date="1492696884000" expanded="true" signature="1791:1853" ph="INSERT INTO messages... " />
+            <marker date="1492696884000" expanded="true" signature="1959:2014" ph="SELECT messa... messages" />
           </folding>
         </state>
       </provider>
@@ -776,7 +774,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -787,12 +785,17 @@
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1492550793000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
-            <marker date="1492550793000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
-            <marker date="1492550793000" expanded="true" signature="1020:1059" ph="SELECT email... users" />
-            <marker date="1492550793000" expanded="true" signature="1229:1278" ph="select * fro... users" />
-            <marker date="1492550793000" expanded="true" signature="1229:1295" ph="select email... users" />
-            <marker date="1492550793000" expanded="true" signature="1472:1517" ph="update users... " />
+            <marker date="1492696884000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
+            <marker date="1492696884000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
+            <marker date="1492696884000" expanded="true" signature="1022:1061" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1231:1297" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1474:1519" ph="UPDATE users... " />
+            <marker date="1492696884000" expanded="true" signature="1480:1519" ph="update users... " />
+            <marker date="1492696884000" expanded="true" signature="1621:1704" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1627:1704" ph="select email... users" />
+            <marker date="1492696884000" expanded="true" signature="1791:1847" ph="INSERT INTO messages... " />
+            <marker date="1492696884000" expanded="true" signature="1791:1853" ph="INSERT INTO messages... " />
+            <marker date="1492696884000" expanded="true" signature="1959:2014" ph="SELECT messa... messages" />
           </folding>
         </state>
       </provider>
@@ -802,7 +805,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -840,7 +843,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -957,8 +960,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab 2/static/client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1410">
+        <state relative-caret-position="-2280">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 2/static/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -971,36 +982,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 2/static/serverstub.js">
+    <entry file="file://$PROJECT_DIR$/Lab 2/database_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="166" column="13" lean-forward="true" selection-start-line="155" selection-start-column="11" selection-end-line="166" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="510">
+          <caret line="72" column="76" lean-forward="false" selection-start-line="72" selection-start-column="76" selection-end-line="72" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1492696884000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
+            <marker date="1492696884000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
+            <marker date="1492696884000" expanded="true" signature="1022:1061" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1231:1297" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1474:1519" ph="UPDATE users... " />
+            <marker date="1492696884000" expanded="true" signature="1480:1519" ph="update users... " />
+            <marker date="1492696884000" expanded="true" signature="1621:1704" ph="SELECT email... users" />
+            <marker date="1492696884000" expanded="true" signature="1627:1704" ph="select email... users" />
+            <marker date="1492696884000" expanded="true" signature="1791:1847" ph="INSERT INTO messages... " />
+            <marker date="1492696884000" expanded="true" signature="1791:1853" ph="INSERT INTO messages... " />
+            <marker date="1492696884000" expanded="true" signature="1959:2014" ph="SELECT messa... messages" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 2/database_helper.py">
+    <entry file="file://$PROJECT_DIR$/Lab 2/static/serverstub.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1492550793000" expanded="true" signature="795:812" ph="INSERT INTO users... " />
-            <marker date="1492550793000" expanded="true" signature="795:835" ph="INSERT INTO users... " />
-            <marker date="1492550793000" expanded="true" signature="1020:1059" ph="SELECT email... users" />
-            <marker date="1492550793000" expanded="true" signature="1229:1278" ph="select * fro... users" />
-            <marker date="1492550793000" expanded="true" signature="1229:1295" ph="select email... users" />
-            <marker date="1492550793000" expanded="true" signature="1472:1517" ph="update users... " />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="100" column="43" lean-forward="true" selection-start-line="100" selection-start-column="14" selection-end-line="100" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab 2/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="92" column="34" lean-forward="false" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="34" />
+        <state relative-caret-position="-168">
+          <caret line="99" column="15" lean-forward="false" selection-start-line="99" selection-start-column="15" selection-end-line="99" selection-end-column="15" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
