@@ -20,6 +20,7 @@ function loggedInPage() {
 function profileView() {
     document.getElementById("view").innerHTML = document.getElementById("profileview").innerHTML;
     clearTab(event);
+
     //Profile view
     document.getElementById("homebtn").onclick = home;
     document.getElementById("browsebtn").onclick = browse;
@@ -64,7 +65,7 @@ function welcomeView() {
 function validateLoginForm() {
     var email = document.forms["loginForm"]["loginmail"].value;
     var password = document.forms["loginForm"]["loginpass"].value;
-    var text;
+    var text = "";
 
     if (password.length < 6) {
         text = "Password is too short.";
@@ -85,7 +86,7 @@ function validateSignUpForm() {
 
 function validateSignUpPassword() {
     var x = document.getElementById("password").value;
-    var text;
+    var text = "";
 
     if (x.length < 6) {
         text = "At least 6 characters please.";
@@ -105,7 +106,7 @@ function validateSignUpPassword() {
 function validatePasswords() {
     var x = document.getElementById("password").value;
     var y = document.getElementById("repassword").value;
-    var text;
+    var text = "";
 
     if (x == y) {
         text = "";
@@ -206,7 +207,7 @@ function home() {
 function updateWall() {
 
     var result = serverstub.getUserMessagesByToken(localStorage.getItem("token"));
-    var text;
+    var text = "";
 
     for (i = 0; i < result.data.length; i++) {
         text += result.data[i].content;
@@ -286,7 +287,7 @@ function showUser() {
 
         //Update wall
         var result = serverstub.getUserMessagesByEmail(token, email);
-        var text;
+        var text = "";
 
         for (i = 0; i < result.data.length; i++) {
             text += result.data[i].content;
@@ -298,7 +299,7 @@ function showUser() {
         document.getElementById("updateB").onclick = function () {
             //Update wall
             var result = serverstub.getUserMessagesByEmail(token, email);
-            var text;
+            var text = "";
 
             for (i = 0; i < result.data.length; i++) {
                 text += result.data[i].content;

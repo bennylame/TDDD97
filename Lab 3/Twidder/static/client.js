@@ -147,7 +147,16 @@ function signUp() {
 }
 
 function signIn(email, password) {
-    var signIn = serverstub.signIn(email, password);
+    // var signIn = serverstub.signIn(email, password);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML =
+                this.responseText;
+        }
+    };
+    xhttp.open("GET", "xmlhttp_info.txt", true);
+    xhttp.send();
 
     if (signIn.success) {
         document.getElementById("error").innerHTML = signIn.message;
@@ -353,4 +362,28 @@ function save() {
     }
 
     document.getElementById("short").innerHTML = text;
+}
+
+function xmlGET() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML =
+                this.responseText;
+        }
+    };
+    xhttp.open("GET", "xmlhttp_info.txt", true);
+    xhttp.send();
+}
+
+function xmlPOST() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML =
+                this.responseText;
+        }
+    };
+    xhttp.open("POST", "xmlhttp_info.txt", true);
+    xhttp.send();
 }
