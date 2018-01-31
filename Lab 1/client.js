@@ -209,11 +209,14 @@ function updateWall() {
     var result = serverstub.getUserMessagesByToken(localStorage.getItem("token"));
     var text = "";
 
+    var entries = document.getElementById("entries");
+    entries.innerHTML = "";
+
     for (i = 0; i < result.data.length; i++) {
-        text += result.data[i].content;
-        text += "<br>/" + result.data[i].writer + "<br><br>";
+        var p = document.createElement("p");
+        p.innerText = result.data[i].writer + " says: " + result.data[i].content;
+        entries.appendChild(p);
     }
-    document.getElementById("entries").innerHTML = text;
 }
 
 function characterCounter() {

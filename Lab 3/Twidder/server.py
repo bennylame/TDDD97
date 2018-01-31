@@ -79,7 +79,7 @@ def change_password():
             return jsonify({"success": False, "message": "Wrong password."})
 
 
-            # Shows logged in users
+# Shows logged in users
 
 
 @app.route('/get-users', methods=['GET'])

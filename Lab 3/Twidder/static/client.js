@@ -134,9 +134,14 @@ function signUp() {
 
     };
 
+    //Gör en post request och få tillbaka en response.
     var x = serverstub.signUp(user);
+    xmlPOST('')
+
+
     localStorage.setItem("message", x.message);
     document.getElementById("result").innerHTML = localStorage.getItem("message");
+
     if (x.success) {
         document.forms["signupForm"].reset();
         return false;
@@ -146,17 +151,13 @@ function signUp() {
 
 }
 
+function handleSignInResponse(obj)
+{}
+
 function signIn(email, password) {
-    // var signIn = serverstub.signIn(email, password);
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("demo").innerHTML =
-                this.responseText;
-        }
-    };
-    xhttp.open("GET", "xmlhttp_info.txt", true);
-    xhttp.send();
+    var signIn = serverstub.signIn(email, password);
+    var params = "email"+email+"&password"+password;
+    xmlPOST("/bdskfjbadjsfhjkads", params, handleSignInResponse);
 
     if (signIn.success) {
         document.getElementById("error").innerHTML = signIn.message;
@@ -169,10 +170,15 @@ function signIn(email, password) {
 }
 
 function logout() {
-    var signOut = serverstub.signOut(localStorage.getItem("token"));
+    var params = "token="+localStorage.getItem("token");
+    xmlPOST("/sign-out",params,function(response){
+        localStorage.removeItem("token");
+        welcomeView();
+    });
+    /*var signOut = serverstub.signOut(localStorage.getItem("token"));
     // document.getElementById("status").innerHTML = signOut.message;
     localStorage.removeItem("token");
-    welcomeView();
+    welcomeView();*/
 }
 
 
@@ -366,24 +372,42 @@ function save() {
 
 function xmlGET() {
     var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "xmlhttp_info.txt", true);
+
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("demo").innerHTML =
                 this.responseText;
         }
     };
-    xhttp.open("GET", "xmlhttp_info.txt", true);
     xhttp.send();
 }
 
-function xmlPOST() {
+function xmlPOST(url,params, callback) {
     var xhttp = new XMLHttpRequest();
+
+    console.log("Test: " + xhttp.statusText + " " + xhttp.status);
+
+    xhttp.open("POST", url, true);
+
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
     xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 2) {
+            console.log(xhttp.statusText + " " + xhttp.status);
+        }
+        if (this.readyState == 3) {
+            console.log("Ready state 3: "+xhttp.statusText + " " + xhttp.status);
+        }
+
         if (this.readyState == 4 && this.status == 200) {
+            console.log("Ready state 4: "+xhttp.statusText + " " + xhttp.responseText);
+
             document.getElementById("demo").innerHTML =
-                this.responseText;
+                this.responseText
+            callback(JSON.parse(xhttp.responseText));
         }
     };
-    xhttp.open("POST", "xmlhttp_info.txt", true);
-    xhttp.send();
+    xhttp.send(params);
 }
