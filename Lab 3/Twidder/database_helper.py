@@ -1,4 +1,6 @@
 import sqlite3
+import json
+import collections
 from flask import g
 
 DATABASE = 'database.db'
@@ -32,7 +34,6 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
 
 
-
 def add_user(email, password, firstname, familyname, gender, city, country):
     query_db('INSERT INTO users VALUES (?,?,?,?,?,?,?)',
              [email, password, firstname, familyname, gender, city, country])
@@ -62,7 +63,20 @@ def change_password(email, password):
 
 def get_user_data(email):
     user = query_db('SELECT email, firstname, familyname, gender, city, country FROM users WHERE email=?', [email])
-    return user
+    get_db().commit()
+    # Makes json array
+    objects_lista = []
+    for row in user:
+        h = collections.OrderedDict()
+        h['email'] = row[0]
+        h['firstname'] = row[1]
+        h['familyname'] = row[2]
+        h['gender'] = row[3]
+        h['city'] = row[4]
+        h['country'] = row[5]
+        objects_lista.append(h)
+    j = json.dumps(objects_lista)
+    return j
 
 def add_message(message, fromUser, toUser):
     query_db('INSERT INTO messages(message, fromUser, toUser) VALUES (?,?,?)', [message, fromUser, toUser])
@@ -72,4 +86,13 @@ def add_message(message, fromUser, toUser):
 def get_messages(email):
     messages = query_db('SELECT message, fromUser FROM messages where toUser = ?', [email])
     get_db().commit()
-    return messages
+
+    # Makes this into json array
+    objects_list = []
+    for row in messages:
+        d = collections.OrderedDict()
+        d['message'] = row[0]
+        d['fromUser'] = row[1]
+        objects_list.append(d)
+    j = json.dumps(objects_list)
+    return j
