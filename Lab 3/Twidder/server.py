@@ -116,11 +116,14 @@ def get_user_messages_by_token(token):
 @app.route('/get-user-messages-by-email/<token>/<email>', methods=['GET'])
 def get_user_messages_by_email(token, email):
     if token in logged_in_users:
+        print "hej";
         messages = database_helper.get_messages(email)
         user_exist = database_helper.user_exist(email)
         if user_exist:
+            print "user finns";
             return jsonify({"success": True, "message": "User messages retrieved.", "data": messages})
         else:
+            print "user finns ej";
             return jsonify({"success": False, "message": "No such user."})
     else:
         return jsonify({"success": False, "message": "You are not signed in."})

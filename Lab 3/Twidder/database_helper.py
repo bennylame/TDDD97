@@ -76,7 +76,10 @@ def get_user_data(email):
         h['country'] = row[5]
         objects_lista.append(h)
     j = json.dumps(objects_lista)
-    return j
+    if len(objects_lista) == 0:
+        return False;
+    else:
+        return j
 
 def add_message(message, fromUser, toUser):
     query_db('INSERT INTO messages(message, fromUser, toUser) VALUES (?,?,?)', [message, fromUser, toUser])

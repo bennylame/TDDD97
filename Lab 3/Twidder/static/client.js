@@ -185,9 +185,9 @@ function logout() {
     });
 }
 
-function getUserDataByToken(bajs) {
+function getUserDataByToken(response) {
     var token = localStorage.getItem("token");
-    var user = JSON.parse(bajs.data)[0];
+    var user = JSON.parse(response.data)[0];
 
     document.getElementById("nameandgender").innerHTML = user.firstname + " " + user.familyname + ", " + user.gender;
     document.getElementById("email").innerHTML = user.email;
@@ -203,7 +203,7 @@ function getUserDataByToken(bajs) {
                 if (post.success) {
                     document.getElementById("message").value = null;
                     document.getElementById("message").setAttribute("placeholder", post.message);
-                    updateWall();
+                    //updateWall();
                 }
             });
         }
@@ -231,7 +231,7 @@ function updateWall() {
         //Det här tog tid att klura ut jaoo
         var data = JSON.parse(result.data);
         for (i = 0; i < data.length; i++) {
-                text += data[i].message;
+            text += data[i].message;
             text += "<br>/" + data[i].fromUser + "<br><br>";
         }
         document.getElementById("entries").innerHTML = text;
@@ -254,14 +254,6 @@ function characterCounter() {
 function browse() {
     var token = localStorage.getItem("token");
     clearTab(event);
-    // document.getElementById("nameandgenderB").innerHTML = null;
-    // document.getElementById("emailB").innerHTML = null;
-    // document.getElementById("countryB").innerHTML = null;
-    // document.getElementById("cityB").innerHTML = null;
-    // document.getElementById("entriesB").innerHTML = null;
-    // document.getElementById("browseUser").value = null;
-    // document.getElementById("messageB").value = null;
-
     document.getElementById("browse").style.display = "block";
     document.getElementById("messageB").setAttribute("maxlength", 256);
     document.getElementById("counterB").innerHTML = "Remaining characters: 256";
@@ -286,61 +278,61 @@ function showUser() {
     var token = localStorage.getItem("token");
     var email = document.getElementById("browseUser").value;
 
-    var user = serverstub.getUserDataByEmail(token, email);
+    xmlGET("/get-user-data-by-email/" + token + "/" + email, getUserDataByEmail);
+}
 
+function getUserDataByEmail(response) {
+    var token = localStorage.getItem("token");
 
-    if (user.success) {
-        document.getElementById("nameandgenderB").innerHTML = user.data.firstname + " " + user.data.familyname + ", " + user.data.gender;
-        document.getElementById("emailB").innerHTML = user.data.email;
-        document.getElementById("countryB").innerHTML = user.data.country;
-        document.getElementById("cityB").innerHTML = user.data.city;
+    if (response.success) {
+        localStorage.setItem("email", document.getElementById("browseUser").value);
+        var user = JSON.parse(response.data)[0];
+
+        document.getElementById("nameandgenderB").innerHTML = user.firstname + " " + user.familyname + ", " + user.gender;
+        document.getElementById("emailB").innerHTML = user.email;
+        document.getElementById("countryB").innerHTML = user.country;
+        document.getElementById("cityB").innerHTML = user.city;
 
 
         document.getElementById("postB").onclick = function () {
             var content = document.getElementById("messageB").value;
             if (content.length != 0) {
-                var post = serverstub.postMessage(token, content, email);
-                if (post.success) {
-                    document.getElementById("messageB").value = null;
-                    document.getElementById("messageB").setAttribute("placeholder", post.message);
-                } else {
-
-                }
+                var params = "message=" + content + "&token=" + token + "&toUser=" + user.email;
+                xmlPOST("/post-message", params, function (post) {
+                    if (post.success) {
+                        document.getElementById("messageB").value = null;
+                        document.getElementById("messageB").setAttribute("placeholder", post.message);
+                    }
+                });
             }
         };
+        updateWallByEmail();
+        document.getElementById("updateB").onclick = updateWallByEmail;
 
-        //Update wall
-        var result = serverstub.getUserMessagesByEmail(token, email);
-        var text = "";
-
-        for (i = 0; i < result.data.length; i++) {
-            text += result.data[i].content;
-            text += "<br>/" + result.data[i].writer + "<br><br>";
-        }
-        document.getElementById("entriesB").innerHTML = text;
-
-
-        document.getElementById("updateB").onclick = function () {
-            //Update wall
-            var result = serverstub.getUserMessagesByEmail(token, email);
-            var text = "";
-
-            for (i = 0; i < result.data.length; i++) {
-                text += result.data[i].content;
-                text += "<br>/" + result.data[i].writer + "<br><br>";
-            }
-            document.getElementById("entriesB").innerHTML = text;
-
-        }
 
     } else {
-        document.getElementById("nameandgenderB").innerHTML = user.message;
+        document.getElementById("nameandgenderB").innerHTML = response.message;
         document.getElementById("emailB").innerHTML = null;
         document.getElementById("countryB").innerHTML = null;
         document.getElementById("cityB").innerHTML = null;
         document.getElementById("messageB").value = null;
 
     }
+}
+
+function updateWallByEmail() {
+    xmlGET("/get-user-messages-by-email/" + localStorage.getItem("token") + "/" + localStorage.getItem("email"), function (result) {
+        var text = "";
+        //Det här tog tid att klura ut jaoo
+        var data = JSON.parse(result.data);
+        for (i = 0; i < data.length; i++) {
+            text += data[i].message;
+            text += "<br>/" + data[i].fromUser + "<br><br>";
+        }
+        document.getElementById("entriesB").innerHTML = text;
+
+    });
+
 }
 
 function account() {
@@ -361,31 +353,26 @@ function newPassword() {
 }
 
 function save() {
-    var oldpassword, newpassword, changePassword, text;
+    var oldpassword, newpassword, text;
 
     oldpassword = document.getElementById("oldpassword").value;
     newpassword = document.getElementById("password").value;
 
     if (oldpassword != null && newpassword != null && validateSignUpPassword() && validatePasswords()) {
-        changePassword = serverstub.changePassword(localStorage.getItem("token"), oldpassword, newpassword);
-        text = changePassword.message;
-    }
+        var params = "token=" + localStorage.getItem("token") + "&old_password=" + oldpassword + "&new_password=" + newpassword;
+        xmlPOST("/change-password", params, function (changePassword) {
 
-    if (changePassword.success) {
-        document.getElementById("oldpassword").value = null;
-        document.getElementById("password").value = null;
-        document.getElementById("repassword").value = null;
+            text = changePassword.message;
+            if (changePassword.success) {
+                document.getElementById("oldpassword").value = null;
+                document.getElementById("password").value = null;
+                document.getElementById("repassword").value = null;
+            }
+            document.getElementById("short").innerHTML = text;
+        });
     }
-
-    document.getElementById("short").innerHTML = text;
 }
 
-//Implementera detta senare om jag orkar
-function patchWithJson(a, b) {
-    var token = localStorage.getItem("token");
-    var example = {"op": "replace", "path": "/token", "value": token};
-    jsonpatch.min.apply_patch(a, b);
-}
 
 function xmlGET(url, callback) {
     var xhttp = new XMLHttpRequest();
@@ -418,4 +405,12 @@ function xmlPOST(url, params, callback) {
 
     };
     xhttp.send(params);
+}
+
+
+//Implementera detta senare om jag orkar
+function patchWithJson(a, b) {
+    var token = localStorage.getItem("token");
+    var example = {"op": "replace", "path": "/token", "value": token};
+    jsonpatch.min.apply_patch(a, b);
 }
