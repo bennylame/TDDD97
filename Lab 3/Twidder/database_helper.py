@@ -99,3 +99,21 @@ def get_messages(email):
         objects_list.append(d)
     j = json.dumps(objects_list)
     return j
+
+def validate_token(email, token):
+    user = query_db('SELECT email, token FROM signedin WHERE email = ? AND token = ?',
+                    [email, token], one=True)
+    if user is None:
+        return False
+    else:
+        return True
+
+def add_active_user(email, token):
+    query_db('INSERT INTO signedin(email, token) VALUES (?,?)', [email, token]);
+    get_db().commit()
+    print "Added token"
+
+def remove_active_user(token):
+    query_db('DELETE FROM signedin WHERE token=?', [token]);
+    get_db().commit()
+    print "Removed token"

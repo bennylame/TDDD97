@@ -7,6 +7,7 @@ window.onload = function start() {
     if (localStorage.getItem("token") === null) {
         welcomeView();
     } else {
+        //connectSocket();
         loggedInPage();
     }
 };
@@ -18,6 +19,7 @@ function loggedInPage() {
 }
 
 function profileView() {
+    connectSocket();
     document.getElementById("view").innerHTML = document.getElementById("profileview").innerHTML;
     clearTab(event);
     //Profile view
@@ -170,6 +172,7 @@ function signIn(email, password) {
         if (signIn.success) {
             document.getElementById("error").innerHTML = signIn.message;
             localStorage.setItem("token", signIn.data);
+            localStorage.setItem("email", email);
             loggedInPage();
         } else {
             document.getElementById("error").innerHTML = signIn.message;
@@ -180,9 +183,10 @@ function signIn(email, password) {
 function logout() {
     var params = "token=" + localStorage.getItem("token");
     xmlPOST("/sign-out", params, function () {
-        localStorage.removeItem("token");
         welcomeView();
     });
+    localStorage.removeItem("token");
+    localStorage.removeItem("email");
 }
 
 function getUserDataByToken(response) {
@@ -285,7 +289,7 @@ function getUserDataByEmail(response) {
     var token = localStorage.getItem("token");
 
     if (response.success) {
-        localStorage.setItem("email", document.getElementById("browseUser").value);
+        localStorage.setItem("toEmail", document.getElementById("browseUser").value);
         var user = JSON.parse(response.data)[0];
 
         document.getElementById("nameandgenderB").innerHTML = user.firstname + " " + user.familyname + ", " + user.gender;
@@ -316,12 +320,13 @@ function getUserDataByEmail(response) {
         document.getElementById("countryB").innerHTML = null;
         document.getElementById("cityB").innerHTML = null;
         document.getElementById("messageB").value = null;
+        localStorage.removeItem("toEmail");
 
     }
 }
 
 function updateWallByEmail() {
-    xmlGET("/get-user-messages-by-email/" + localStorage.getItem("token") + "/" + localStorage.getItem("email"), function (result) {
+    xmlGET("/get-user-messages-by-email/" + localStorage.getItem("token") + "/" + localStorage.getItem("toEmail"), function (result) {
         var text = "";
         //Det här tog tid att klura ut jaoo
         var data = JSON.parse(result.data);
@@ -389,7 +394,7 @@ function xmlGET(url, callback) {
 function xmlPOST(url, params, callback) {
     var xhttp = new XMLHttpRequest();
 
-    console.log("Test: " + xhttp.statusText + " " + xhttp.status + params);
+    //console.log("Test: " + xhttp.statusText + " " + xhttp.status + params);
 
     xhttp.open("POST", url, true);
 
@@ -398,8 +403,8 @@ function xmlPOST(url, params, callback) {
     xhttp.onreadystatechange = function () {
 
         if (this.readyState == 4 && this.status == 200) {
-            console.log("Ready state 4: " + xhttp.statusText + " " + xhttp.responseText);
-            console.log("message: " + JSON.parse(xhttp.responseText).success);
+           // console.log("Ready state 4: " + xhttp.statusText + " " + xhttp.responseText);
+           // console.log("message: " + JSON.parse(xhttp.responseText).success);
             callback(JSON.parse(xhttp.responseText));
         }
 
@@ -407,6 +412,28 @@ function xmlPOST(url, params, callback) {
     xhttp.send(params);
 }
 
+function connectSocket() {
+    console.log("HOW MANY FUCKING TIMES?????");
+
+    var myWebSocket = new WebSocket("ws://localhost:5000/connect-socket");
+    var token = localStorage.getItem("token");
+    var email = localStorage.getItem("email");
+
+
+    myWebSocket.onopen = function (evt) {
+        alert("Connection open ...");
+        myWebSocket.send(JSON.stringify({"token": token, "email": email}));
+		console.log("Open websocket: " + email);
+    };
+    myWebSocket.onmessage = function (response) {
+		if (response.success != true) {
+			logout();
+		}
+    };
+    myWebSocket.onclose = function (evt) {
+        alert("Connection closed.");
+    };
+}
 
 //Implementera detta senare om jag orkar
 function patchWithJson(a, b) {

@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
 import database_helper
 import os, binascii
+import json
 
 app = Flask(__name__, static_url_path='')
 
 logged_in_users = {}
+open_sockets = {}
 
 
 @app.route('/')
@@ -27,6 +29,7 @@ def sign_in():
     if is_valid:
         token = binascii.b2a_hex(os.urandom(15))
         logged_in_users[token] = email
+        database_helper.add_active_user(email, token)
         return jsonify(
             {"success": True, "message": "Successfully signed in.", "data": token})
     else:
@@ -56,6 +59,10 @@ def sign_out():
     token = request.form['token']
     if token in logged_in_users:
         del logged_in_users[token]
+        if token in open_sockets:
+            open_sockets[token].close()
+            del open_sockets[token]
+            database_helper.remove_active_user(token)
         return jsonify({"success": True, "message": "Successfully signed out."})
     else:
         return jsonify({"success": False, "message": "You are not signed in."})
@@ -116,14 +123,11 @@ def get_user_messages_by_token(token):
 @app.route('/get-user-messages-by-email/<token>/<email>', methods=['GET'])
 def get_user_messages_by_email(token, email):
     if token in logged_in_users:
-        print "hej";
         messages = database_helper.get_messages(email)
         user_exist = database_helper.user_exist(email)
         if user_exist:
-            print "user finns";
             return jsonify({"success": True, "message": "User messages retrieved.", "data": messages})
         else:
-            print "user finns ej";
             return jsonify({"success": False, "message": "No such user."})
     else:
         return jsonify({"success": False, "message": "You are not signed in."})
@@ -144,6 +148,37 @@ def post_message():
             return jsonify({"success": False, "message": "No such user."})
     else:
         return jsonify({"success": False, "message": "You are not signed in."})
+
+@app.route('/connect-socket')
+def auto_logout():
+    if request.environ.get('wsgi.websocket'):
+
+        ws = request.environ['wsgi.websocket']
+        message = json.loads(ws.receive())
+        token = message['token']
+        email = message['email']
+        print token, "token"
+
+        print "count keys: ", logged_in_users.keys()
+        print "logged in",logged_in_users
+
+        if database_helper.validate_token(email, token):
+            print "Valid"
+            for key in logged_in_users.keys():
+                if logged_in_users[key] == email and key != token:
+                    print "Replace"
+                    open_sockets[key].send(jsonify({"success": False, "message": "You're logged in somewhere else."}))
+                    open_sockets[key].close()
+                    del open_sockets[key]
+                    database_helper.remove_active_user(key)
+
+            open_sockets[token] = ws
+
+            while True:
+                message = ws.receive()
+                ws.send(message)
+
+    return ''
 
 
 

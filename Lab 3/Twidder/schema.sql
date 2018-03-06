@@ -18,3 +18,10 @@ CREATE TABLE messages (
   FOREIGN KEY (fromUser) REFERENCES users(id),
   FOREIGN KEY (toUser) REFERENCES users(id)
 );
+
+drop table if exists signedin;
+CREATE TABLE signedin (
+  id INTEGER PRIMARY KEY autoincrement,
+  email TEXT NOT NULL,
+  token TEXT NOT NULL
+)
