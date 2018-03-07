@@ -432,6 +432,7 @@ function connectSocket() {
     };
     myWebSocket.onclose = function (evt) {
         alert("Connection closed.");
+        localStorage.clear();
     };
 }
 

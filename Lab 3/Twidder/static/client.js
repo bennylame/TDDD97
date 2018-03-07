@@ -413,7 +413,6 @@ function xmlPOST(url, params, callback) {
 }
 
 function connectSocket() {
-    console.log("HOW MANY FUCKING TIMES?????");
 
     var myWebSocket = new WebSocket("ws://localhost:5000/connect-socket");
     var token = localStorage.getItem("token");
@@ -432,6 +431,7 @@ function connectSocket() {
     };
     myWebSocket.onclose = function (evt) {
         alert("Connection closed.");
+        localStorage.clear();
     };
 }
 

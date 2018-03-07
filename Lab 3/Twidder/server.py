@@ -154,19 +154,14 @@ def auto_logout():
     if request.environ.get('wsgi.websocket'):
 
         ws = request.environ['wsgi.websocket']
+
         message = json.loads(ws.receive())
         token = message['token']
         email = message['email']
-        print token, "token"
-
-        print "count keys: ", logged_in_users.keys()
-        print "logged in",logged_in_users
 
         if database_helper.validate_token(email, token):
-            print "Valid"
             for key in logged_in_users.keys():
                 if logged_in_users[key] == email and key != token:
-                    print "Replace"
                     open_sockets[key].send(jsonify({"success": False, "message": "You're logged in somewhere else."}))
                     open_sockets[key].close()
                     del open_sockets[key]
