@@ -9,8 +9,7 @@
     <script src="client.js" type="text/javascript"></script>
     <script src="jsonpatch.min.js" type="text/javascript"></script>
 
-    <!--- Bootstrap
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
+    <!--- Pure CSS -->
     <link rel="stylesheet" href="pure/pure.css">
     <link rel="stylesheet" href="pure/grids-responsive.css">
 
@@ -20,103 +19,83 @@
 
 <body>
 <div id="view">
-    <div class="pure-g">
-        <div class="pure-u-1 pure-u-md-1-2">
-            <img src="wimage.png"/>
+    <div class="pure-g welcome-space-top" style="justify-content: center; ">
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-4">
+            <fieldset>
+                <img class="pure-img" src="wimage.png"/>
+            </fieldset>
         </div>
-        <div class="pure-u-1 pure-u-md-1-2">
-            <div class="login">
-                <form name="loginForm" id="loginForm" class="pure-form-aligned" method="post">
-                    <fieldset>
-                        <div class="pure-control-group">
-                            <label for="loginmail">Email</label>
-                            <input type="email" name="loginmail" id="loginmail"/>
-                        </div>
-                        <div class="pure-control-group">
-                            <label for="loginpass">Password</label>
-                            <input type="password" name="loginpass" id="loginpass"
-                                   class="form-control" required/><
-                        </div>
-                        <div class="pure-control-group">
-                            <p id="error"></p>
-                            <p id="demo"></p>
-                            <button type="submit" name="login">
-                                Sign in
-                            </button>
-                        </div>
-                        <div class="pure-controls">
-                            <button type="submit" class="pure-button pure-button-primary">Submit</button>
-                        </div>
-                        <!--  <div class="login__form__element"><input type="submit" name="login" value="Login"></div>-->
-                    </fieldset>
-                </form>
-            </div>
-            <div class="signup">
-                <h2>Sign up here!</h2>
-                <form name="signupForm" id="signupForm" class="pure-form" method="post">
-                    <ul>
-                        <li>
-                            <div class="login__form__label"><label for="firstname">First name</label></div>
-                            <div class="login__form__element"><input type="text" name="firstname" id="firstname"
-                                                                     placeholder="e.g. Tomas" required/>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="login__form__label"><label for="familyname">Family name</label></div>
-                            <div class="login__form__element"><input type="text" name="familyname" id="familyname"
-                                                                     placeholder="e.g. Waltz" required/>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="login__form__label"><label for="gender">Gender</label></div>
-                            <div class="login__form__element">
-                                <select name="gender" id="gender" required>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Cat">Cat</option>
-                                </select>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="login__form__label"><label for="city">City</label></div>
-                            <div class="login__form__element"><input type="text" name="city" id="city"
-                                                                     placeholder="e.g. Linköping" required/>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="login__form__label"><label for="country">Country</label></div>
-                            <div class="login__form__element"><input type="text" name="country" id="country"
-                                                                     placeholder="e.g. Sweden" required/>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="login__form__label"><label for="email">Email</label></div>
-                            <div class="login__form__element"><input type="email" name="email" id="email"
-                                                                     placeholder="Enter your email"
-                                                                     required/></div>
-                        </li>
-                        <li>
-                            <div class="login__form__label"><label for="password">Password</label></div>
-                            <div class="login__form__element"><input type="password" name="password" id="password"
-                                                                     required/>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="login__form__label"><label for="repassword">Repeat password</label></div>
-                            <div class="login__form__element"><input type="password" name="repassword"
-                                                                     id="repassword" required></div>
-                        </li>
-                        <li>
-                            <div class="login__form__label">
-                                <p id="short"></p>
-                                <p id="mismatch"></p>
-                                <p id="result" style="color: black; font-size:10px;"></p></div>
-                            <div class="login__form__element"><input type="submit" name="signup" id="signup"
-                                                                     value="Sign Up"></div>
-                        </li>
-                    </ul>
-                </form>
-            </div>
+        <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-4 bigger-font">
+            <form name="loginForm" id="loginForm" class="pure-form-aligned" method="post">
+                <fieldset>
+                    <div class="pure-control-group some-padding">
+                        <label for="loginmail">Email</label>
+                        <input type="email" name="loginmail" id="loginmail"/>
+                    </div>
+                    <div class="pure-control-group some-padding">
+                        <label for="loginpass">Password</label>
+                        <input type="password" name="loginpass" id="loginpass"
+                               class="form-control" required/>
+                    </div>
+                    <div class="pure-controls">
+                        <p id="error"></p>
+                        <p id="demo"></p>
+                        <button type="submit" class="pure-button pure-button-primary" name="login">
+                            Sign in
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+            <h2>Sign up here!</h2>
+            <form name="signupForm" id="signupForm" class="pure-form-aligned" method="post">
+                <fieldset>
+                    <div class="pure-control-group some-padding">
+                        <label for="firstname">First name</label>
+                        <input type="text" name="firstname" id="firstname"
+                               placeholder="e.g. Tomas" required/>
+                    </div>
+                    <div class="pure-control-group some-padding">
+                        <label for="familyname">Family name</label>
+                        <input type="text" name="familyname" id="familyname"
+                               placeholder="e.g. Waltz" required/>
+                    </div>
+                    <div class="pure-control-group some-padding">
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="gender" class="pure-input-1-2" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Cat">Cat</option>
+                        </select>
+                    </div>
+                    <div class="pure-control-group some-padding">
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" placeholder="e.g. Linköping" required/>
+                    </div>
+                    <div class="pure-control-group some-padding">
+                        <label for="country">Country</label>
+                        <input type="text" name="country" id="country" placeholder="e.g. Sweden" required/>
+                    </div>
+                    <div class="pure-control-group some-padding">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" required/>
+                    </div>
+                    <div class="pure-control-group some-padding">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" required/>
+                    </div>
+                    <div class="pure-control-group some-padding">
+                        <label for="repassword">Repeat password</label>
+                        <input type="password" name="repassword" id="repassword" required>
+                    </div>
+                    <div class="pure-controls">
+                        <p id="short"></p>
+                        <p id="mismatch"></p>
+                        <p id="result" style="color: black; font-size:10px;"></p>
+                        <input type="submit" class="pure-button pure-button-primary" name="signup" id="signup"
+                               value="Sign Up">
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
 </div>

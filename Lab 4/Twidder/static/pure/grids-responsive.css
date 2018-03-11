@@ -432,7 +432,33 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
     }
 }
 
+/* BENNY */
+
+/* Make font a little bigger on phones and tablets.
+  Added padding on each input row so they don't touch each other.
+  */
+@media screen and (min-width: 20.5em) and (max-width: 63em) {
+    .bigger-font {
+        font-size: 2em;
+    }
+
+    .some-padding {
+        padding: 1em 1em 0 0;
+    }
+
+}
+
 @media screen and (min-width: 64em) {
+    /* Add margin to create some space for welcome and profile view
+     on screens ≥ 1024px */
+    .welcome-space-top {
+        margin-top: 100px;
+    }
+
+    .profile-space-top {
+        margin-top: 60px;
+    }
+
     .pure-u-lg-1,
     .pure-u-lg-1-1,
     .pure-u-lg-1-2,
