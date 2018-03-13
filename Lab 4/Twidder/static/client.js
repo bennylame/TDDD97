@@ -14,8 +14,57 @@ window.onload = function start() {
 
 function loggedInPage() {
     profileView();
+
+    //Save the url of state when signed in
+    var savedPageStateURL = window.location.pathname;
+
+    // Adds elements with classname tablinks to an array
+    let boxes = Array.from(document.getElementsByClassName("tablinks"));
+    // Add an eventlistener and history entry for each element with "tablinks"-tag
+    boxes.forEach(b => {
+        let id = b.id;
+        b.addEventListener('click', e => {
+            console.log("how often does this happen");
+            history.pushState({id}, null, `./${id}`);
+            selectBox(id, boxes);
+        });
+    });
+
+    window.addEventListener('popstate', e => {
+        selectBox(e.state.id, boxes);
+    });
+
+    history.replaceState({id: null}, null, './');
+
+
     //Open Home tab as default
     document.getElementById("homebtn").click();
+
+
+}
+
+/* MAKE A CLICK TOO BUT DONT TRIGGER CLICK EVENT */
+function selectBox(id, boxes) {
+    boxes.forEach(b => {
+        if (b.id === id) {
+            console.log(`${b.id}`);
+            switch (b.id) {
+                case "homebtn":
+                    console.log("HEMM");
+                    home();
+                    break;
+                case "browsebtn":
+                    console.log("SÖK");
+                    browse();
+                    break;
+                case "accountbtn":
+                    console.log("KONTO");
+                    account();
+                    break;
+            }
+        }
+        b.classList.toggle('active', b.id === id);
+    });
 }
 
 function profileView() {
@@ -62,9 +111,6 @@ function welcomeView() {
     document.getElementById("repassword").oninput = validatePasswords;
     document.getElementById("signupForm").onsubmit = validateSignUpForm;
 
-    document.getElementById("getusers").onclick = function () {
-        xmlGET("/get-users", getUsers);
-    };
 
 }
 
@@ -184,6 +230,7 @@ function logout() {
     var params = "token=" + localStorage.getItem("token");
     xmlPOST("/sign-out", params, function () {
         welcomeView();
+        history.pushState({id}, null, '/');
     });
     localStorage.removeItem("token");
     localStorage.removeItem("email");
@@ -217,6 +264,9 @@ function getUserDataByToken(response) {
 }
 
 function home() {
+    id = document.getElementById("homebtn").id;
+    //history.pushState({id}, null, `./`);
+
     var token = localStorage.getItem("token");
     clearTab(event);
     document.getElementById("home").style.display = "block";
@@ -231,14 +281,19 @@ function home() {
 function updateWall() {
 
     xmlGET("/get-user-messages-by-token/" + localStorage.getItem("token"), function (result) {
-        var text = "";
-        //Det här tog tid att klura ut jaoo
+        document.getElementById("entries").innerText = "";
+        //Det här tog tid att klura ut
         var data = JSON.parse(result.data);
         for (i = 0; i < data.length; i++) {
-            text += data[i].message;
-            text += "<br>/" + data[i].fromUser + "<br><br>";
+            meddelande = document.createElement('p');
+            meddelande.setAttribute('draggable', true);
+            meddelande.setAttribute('ondragstart', "drag(event)");
+            meddelande.setAttribute('id', "post" + i);
+            text = data[i].message + "<br>/" + data[i].fromUser;
+            meddelande.innerHTML = text;
+            document.getElementById("entries").appendChild(meddelande);
         }
-        document.getElementById("entries").innerHTML = text;
+        //document.getElementById("entries").innerHTML = text;
     });
 }
 
@@ -256,6 +311,9 @@ function characterCounter() {
 }
 
 function browse() {
+    id = document.getElementById("accountbtn").id;
+    //history.pushState({id}, null, `./${id}`);
+
     var token = localStorage.getItem("token");
     clearTab(event);
     document.getElementById("browse").style.display = "block";
@@ -341,6 +399,9 @@ function updateWallByEmail() {
 }
 
 function account() {
+    id = document.getElementById("accountbtn").id;
+    //history.pushState({id}, null, `./${id}`);
+
     clearTab(event);
     document.getElementById("account").style.display = "block";
     document.getElementById("newpassword").style.display = "none";
@@ -403,8 +464,8 @@ function xmlPOST(url, params, callback) {
     xhttp.onreadystatechange = function () {
 
         if (this.readyState == 4 && this.status == 200) {
-           // console.log("Ready state 4: " + xhttp.statusText + " " + xhttp.responseText);
-           // console.log("message: " + JSON.parse(xhttp.responseText).success);
+            // console.log("Ready state 4: " + xhttp.statusText + " " + xhttp.responseText);
+            // console.log("message: " + JSON.parse(xhttp.responseText).success);
             callback(JSON.parse(xhttp.responseText));
         }
 
@@ -413,8 +474,6 @@ function xmlPOST(url, params, callback) {
 }
 
 function connectSocket() {
-    console.log("HOW MANY FUCKING TIMES?????");
-
     var myWebSocket = new WebSocket("ws://localhost:5000/connect-socket");
     var token = localStorage.getItem("token");
     var email = localStorage.getItem("email");
@@ -423,18 +482,30 @@ function connectSocket() {
     myWebSocket.onopen = function (evt) {
         alert("Connection open ...");
         myWebSocket.send(JSON.stringify({"token": token, "email": email}));
-		console.log("Open websocket: " + email);
     };
     myWebSocket.onmessage = function (response) {
-		if (response.success != true) {
-			logout();
-		}
+        if (response.success != true) {
+            logout();
+        }
     };
     myWebSocket.onclose = function (evt) {
         alert("Connection closed.");
         localStorage.clear();
     };
 }
+
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.innerText);
+    console.log("event target id: " + ev.target.innerText);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    document.getElementById("message").value += data;
+}
+
 
 //Implementera detta senare om jag orkar
 function patchWithJson(a, b) {

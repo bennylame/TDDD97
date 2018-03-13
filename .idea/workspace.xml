@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ca56ce8-661e-4d88-97c3-86d5fecfe1d1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab 4/Twidder/static/test2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab 4/Twidder/static/test3.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 3/Twidder/database.db" afterPath="$PROJECT_DIR$/Lab 3/Twidder/database.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 4/Twidder/database_helper.py" afterPath="$PROJECT_DIR$/Lab 4/Twidder/database_helper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 4/Twidder/server.py" afterPath="$PROJECT_DIR$/Lab 4/Twidder/server.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 4/Twidder/static/client.css" afterPath="$PROJECT_DIR$/Lab 4/Twidder/static/client.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 4/Twidder/static/client.html" afterPath="$PROJECT_DIR$/Lab 4/Twidder/static/client.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 4/Twidder/static/client.js" afterPath="$PROJECT_DIR$/Lab 4/Twidder/static/client.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 4/Twidder/static/pure/grids-responsive.css" afterPath="$PROJECT_DIR$/Lab 4/Twidder/static/pure/grids-responsive.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 4/Twidder/static/test.html" afterPath="$PROJECT_DIR$/Lab 4/Twidder/static/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab 4/Twidder/static/test2.html" afterPath="$PROJECT_DIR$/Lab 4/Twidder/static/test2.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/TDDD97$TDDD97.coverage" NAME="TDDD97 Coverage Results" MODIFIED="1520712650098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 3/Twidder" />
+    <SUITE FILE_PATH="coverage/TDDD97$TDDD97.coverage" NAME="TDDD97 Coverage Results" MODIFIED="1520879322633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 3/Twidder" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -37,55 +42,100 @@
     <favorites_list name="TDDD97" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.51857835">
+    <splitter split-orientation="horizontal" split-proportion="0.47980613">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="client.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="test2.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/test2.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1263">
+                  <caret line="153" column="6" lean-forward="false" selection-start-line="153" selection-start-column="6" selection-end-line="153" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="test3.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/test3.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="555">
+                  <caret line="37" column="19" lean-forward="false" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="client.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/client.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="25" column="62" lean-forward="false" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="62" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="client.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Lab 3/Twidder/static/client.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="615">
-                  <caret line="134" column="24" lean-forward="false" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/test.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1061">
-                  <caret line="99" column="10" lean-forward="true" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+                <state relative-caret-position="213">
+                  <caret line="161" column="103" lean-forward="true" selection-start-line="161" selection-start-column="103" selection-end-line="161" selection-end-column="103" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="client.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Lab 3/Twidder/static/client.css">
+            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/client.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="113" column="16" lean-forward="false" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="16" />
+                <state relative-caret-position="576">
+                  <caret line="241" column="32" lean-forward="false" selection-start-line="241" selection-start-column="32" selection-end-line="241" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="pure.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/pure/pure.css">
+          <file leaf-file-name="grids-responsive.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/pure/grids-responsive.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="20265">
-                  <caret line="1351" column="0" lean-forward="true" selection-start-line="1351" selection-start-column="0" selection-end-line="1351" selection-end-column="0" />
+                <state relative-caret-position="281">
+                  <caret line="449" column="65" lean-forward="false" selection-start-line="449" selection-start-column="65" selection-end-line="449" selection-end-column="65" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="client.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/client.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="468">
+                  <caret line="494" column="1" lean-forward="false" selection-start-line="494" selection-start-column="1" selection-end-line="494" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="database_helper.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/database_helper.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="672">
+                  <caret line="134" column="15" lean-forward="false" selection-start-line="134" selection-start-column="15" selection-end-line="134" selection-end-column="15" />
+                  <folding>
+                    <element signature="e#0#14#0" expanded="true" />
+                    <marker date="1520879318884" expanded="true" signature="818:858" ph="INSERT INTO users... " />
+                    <marker date="1520879318884" expanded="true" signature="1048:1087" ph="SELECT email... users" />
+                    <marker date="1520879318884" expanded="true" signature="1264:1330" ph="SELECT email... users" />
+                    <marker date="1520879318884" expanded="true" signature="1508:1553" ph="UPDATE users... " />
+                    <marker date="1520879318884" expanded="true" signature="1656:1739" ph="SELECT email... users" />
+                    <marker date="1520879318884" expanded="true" signature="2264:2326" ph="INSERT INTO messages... " />
+                    <marker date="1520879318884" expanded="true" signature="2432:2487" ph="SELECT messa... messages" />
+                    <marker date="1520879318884" expanded="true" signature="2835:2898" ph="SELECT email... signedin" />
+                    <marker date="1520879318884" expanded="true" signature="3070:3117" ph="INSERT INTO signedin... " />
+                    <marker date="1520879318884" expanded="true" signature="3230:3264" ph="DELETE FROM " />
+                    <marker date="1520879318884" expanded="true" signature="3379:3434" ph="SELECT messa... messages" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/server.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="435">
+                  <caret line="169" column="63" lean-forward="true" selection-start-line="169" selection-start-column="63" selection-end-line="169" selection-end-column="63" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -93,22 +143,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="client.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/client.css">
+        <leaf>
+          <file leaf-file-name="client.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/client.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="266">
-                  <caret line="142" column="14" lean-forward="false" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="grids-responsive.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/pure/grids-responsive.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="112">
-                  <caret line="434" column="11" lean-forward="false" selection-start-line="434" selection-start-column="11" selection-end-line="434" selection-end-column="11" />
+                <state relative-caret-position="315">
+                  <caret line="69" column="16" lean-forward="false" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
@@ -131,36 +171,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pure-g</find>
-      <find>pure-u-1</find>
-      <find>center</find>
-      <find>align-content</find>
-      <find>menu-list</find>
-      <find>space-t</find>
-      <find>logout</find>
-      <find>tabcon</find>
-      <find>personalinf</find>
-      <find>tabcontent</find>
-      <find>personalinfo</find>
-      <find>posts</find>
-      <find>pure-u-md</find>
-      <find>profile view</find>
-      <find>wall</find>
-      <find>pure-u</find>
-      <find>button</find>
-      <find>a</find>
-      <find>@media screen</find>
-      <find>font-size</find>
-      <find>em</find>
-      <find>media screen</find>
-      <find>label</find>
-      <find>menutab</find>
-      <find>search</find>
-      <find>account</find>
-      <find>welcome-</find>
-      <find>bigger-</find>
-      <find>pure-menu-list</find>
+      <find>menu</find>
       <find>space-top</find>
+      <find>pure-menu-item</find>
+      <find>conso</find>
+      <find>welcomeview</find>
+      <find>onclick</find>
+      <find>welcomevie</find>
+      <find>selectbo</find>
+      <find>logout</find>
+      <find>loggedinpage</find>
+      <find>pure-menu-link</find>
+      <find>replacestate</find>
+      <find>document.getElementbyid(&quot;home</find>
+      <find>document.getElementbyid(&quot;homebtn</find>
+      <find>console.log</find>
+      <find>browse(</find>
+      <find>page</find>
+      <find>script</find>
+      <find>d3</find>
+      <find>hom</find>
+      <find>god bless</find>
+      <find>get-user-messages-by-email</find>
+      <find>message</find>
+      <find>home</find>
+      <find>getuserdatabytoken</find>
+      <find>&lt;br&gt;</find>
+      <find>browse</find>
+      <find>copytex</find>
+      <find>$</find>
+      <find>cop</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,23 +229,35 @@
         <option value="$PROJECT_DIR$/Lab 3/Twidder/schema.sql" />
         <option value="$PROJECT_DIR$/Lab 3/Twidder/database_helper.py" />
         <option value="$PROJECT_DIR$/Lab 3/Twidder/static/client.js" />
-        <option value="$PROJECT_DIR$/Lab 4/Twidder/static/client.js" />
         <option value="$PROJECT_DIR$/Lab 3/Twidder/server.py" />
         <option value="$PROJECT_DIR$/Lab 3/Twidder/static/client.html" />
         <option value="$PROJECT_DIR$/Lab 4/Twidder/static/pure/pure.css" />
         <option value="$PROJECT_DIR$/Lab 4/Twidder/static/test.html" />
-        <option value="$PROJECT_DIR$/Lab 4/Twidder/static/test2.html" />
-        <option value="$PROJECT_DIR$/Lab 4/Twidder/static/client.css" />
-        <option value="$PROJECT_DIR$/Lab 4/Twidder/static/client.html" />
         <option value="$PROJECT_DIR$/Lab 4/Twidder/static/pure/grids-responsive.css" />
+        <option value="$PROJECT_DIR$/Lab 4/Twidder/static/client.css" />
+        <option value="$PROJECT_DIR$/Lab 4/Twidder/static/test3.html" />
+        <option value="$PROJECT_DIR$/Lab 4/Twidder/database_helper.py" />
+        <option value="$PROJECT_DIR$/Lab 4/Twidder/server.py" />
+        <option value="$PROJECT_DIR$/Lab 4/Twidder/static/test2.html" />
+        <option value="$PROJECT_DIR$/Lab 4/Twidder/static/client.html" />
+        <option value="$PROJECT_DIR$/Lab 4/Twidder/static/client.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/Lab 4/Twidder/static/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
@@ -315,39 +367,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Lab 3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TDDD97" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TDDD97" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab 3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twidder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TDDD97" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TDDD97" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab 3" />
+              <option name="myItemId" value="Lab 4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -358,13 +378,17 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -375,21 +399,24 @@
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
     <property name="SearchEverywhereHistoryKey" value="sign_in&#9;null&#9;null" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="js.eslint.nodeInterpreter" value="project" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/Lab 3/Twidder/static" />
-      <recent name="$PROJECT_DIR$/Lab 3/Twidder" />
-      <recent name="$PROJECT_DIR$/Lab 2/static" />
-      <recent name="$PROJECT_DIR$/static" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Lab 4/Twidder/static" />
       <recent name="$PROJECT_DIR$/Lab 3" />
       <recent name="$PROJECT_DIR$/Lab 3/Twidder" />
       <recent name="$PROJECT_DIR$/Lab 2" />
       <recent name="$PROJECT_DIR$/Lab 1" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Lab 4/Twidder/static" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Lab 3/Twidder/static" />
+      <recent name="$PROJECT_DIR$/Lab 3/Twidder" />
+      <recent name="$PROJECT_DIR$/Lab 2/static" />
     </key>
   </component>
   <component name="RunManager" selected="Python.TDDD97">
@@ -678,8 +705,9 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21167883" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.112277865" sideWeight="0.4938918" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25605816" sideWeight="0.4938918" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14135703" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09693053" sideWeight="0.5061082" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997006" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -691,7 +719,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
     </layout>
@@ -735,48 +762,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Lab 2/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TDDD97.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TDDD97.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 1/client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2715">
-          <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 1/client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3750">
-          <caret line="250" column="0" lean-forward="true" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 2/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TDDD97.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -880,6 +865,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -887,6 +873,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -894,6 +881,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="167" column="9" lean-forward="true" selection-start-line="167" selection-start-column="9" selection-end-line="167" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -901,6 +889,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="177" column="0" lean-forward="true" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -908,6 +897,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -922,6 +912,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="196" column="14" lean-forward="false" selection-start-line="196" selection-start-column="4" selection-end-line="196" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -954,17 +945,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="431" column="6" lean-forward="true" selection-start-line="431" selection-start-column="6" selection-end-line="431" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lab 3/Twidder/static/serverstub.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -973,6 +958,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="382" column="37" lean-forward="true" selection-start-line="382" selection-start-column="37" selection-end-line="382" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -981,7 +967,7 @@
         <state relative-caret-position="126">
           <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -990,6 +976,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,6 +998,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-430">
           <caret line="82" column="9" lean-forward="false" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/pure/pure.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20265">
+          <caret line="1351" column="0" lean-forward="false" selection-start-line="1351" selection-start-column="0" selection-end-line="1351" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,37 +1018,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="25" column="62" lean-forward="false" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/pure/pure.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20265">
-          <caret line="1351" column="0" lean-forward="true" selection-start-line="1351" selection-start-column="0" selection-end-line="1351" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="72" column="29" lean-forward="false" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
-          <folding>
-            <marker date="1520716652533" expanded="true" signature="1538:6649" ph="..." />
-            <marker date="1520716652533" expanded="true" signature="3867:4061" ph="..." />
-            <marker date="1520716652533" expanded="true" signature="4693:6624" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lab 3/Twidder/static/client.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="1695">
           <caret line="113" column="16" lean-forward="false" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="16" />
           <folding />
         </state>
@@ -1060,24 +1028,114 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1061">
-          <caret line="99" column="10" lean-forward="true" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/bower_components/requirejs-plugins/examples/js/foo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/bower_components/requirejs-plugins/examples/js/foo.bar">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/node_modules/requirejs/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/pure/grids-responsive.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="449" column="65" lean-forward="false" selection-start-line="449" selection-start-column="65" selection-end-line="449" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/client.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="142" column="14" lean-forward="false" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
+        <state relative-caret-position="576">
+          <caret line="241" column="32" lean-forward="false" selection-start-line="241" selection-start-column="32" selection-end-line="241" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/pure/grids-responsive.css">
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/test3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="434" column="11" lean-forward="false" selection-start-line="434" selection-start-column="11" selection-end-line="434" selection-end-column="11" />
+        <state relative-caret-position="555">
+          <caret line="37" column="19" lean-forward="false" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/database_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="134" column="15" lean-forward="false" selection-start-line="134" selection-start-column="15" selection-end-line="134" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1520879318884" expanded="true" signature="818:858" ph="INSERT INTO users... " />
+            <marker date="1520879318884" expanded="true" signature="1048:1087" ph="SELECT email... users" />
+            <marker date="1520879318884" expanded="true" signature="1264:1330" ph="SELECT email... users" />
+            <marker date="1520879318884" expanded="true" signature="1508:1553" ph="UPDATE users... " />
+            <marker date="1520879318884" expanded="true" signature="1656:1739" ph="SELECT email... users" />
+            <marker date="1520879318884" expanded="true" signature="2264:2326" ph="INSERT INTO messages... " />
+            <marker date="1520879318884" expanded="true" signature="2432:2487" ph="SELECT messa... messages" />
+            <marker date="1520879318884" expanded="true" signature="2835:2898" ph="SELECT email... signedin" />
+            <marker date="1520879318884" expanded="true" signature="3070:3117" ph="INSERT INTO signedin... " />
+            <marker date="1520879318884" expanded="true" signature="3230:3264" ph="DELETE FROM " />
+            <marker date="1520879318884" expanded="true" signature="3379:3434" ph="SELECT messa... messages" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="169" column="63" lean-forward="true" selection-start-line="169" selection-start-column="63" selection-end-line="169" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/test2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1263">
+          <caret line="153" column="6" lean-forward="false" selection-start-line="153" selection-start-column="6" selection-end-line="153" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="161" column="103" lean-forward="true" selection-start-line="161" selection-start-column="103" selection-end-line="161" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 4/Twidder/static/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="69" column="16" lean-forward="false" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
           <folding />
         </state>
       </provider>

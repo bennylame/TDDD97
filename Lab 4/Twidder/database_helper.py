@@ -40,7 +40,9 @@ def add_user(email, password, firstname, familyname, gender, city, country):
     get_db().commit()
 
 
-    #Checks so that user is not taken
+    # Checks so that user is not taken
+
+
 def user_exist(email):
     user = query_db('SELECT email FROM users WHERE email = ?', [email], one=True)
     if user is None:
@@ -48,7 +50,9 @@ def user_exist(email):
     else:
         return True
 
-    #Checks login
+        # Checks login
+
+
 def is_valid_user(email, password):
     user = query_db('SELECT email, password FROM users WHERE email = ? AND password = ?',
                     [email, password], one=True)
@@ -57,9 +61,11 @@ def is_valid_user(email, password):
     else:
         return True
 
+
 def change_password(email, password):
     query_db('UPDATE users SET password = ? WHERE email = ?', [password, email], one=True)
     get_db().commit()
+
 
 def get_user_data(email):
     user = query_db('SELECT email, firstname, familyname, gender, city, country FROM users WHERE email=?', [email])
@@ -81,6 +87,7 @@ def get_user_data(email):
     else:
         return j
 
+
 def add_message(message, fromUser, toUser):
     query_db('INSERT INTO messages(message, fromUser, toUser) VALUES (?,?,?)', [message, fromUser, toUser])
     get_db().commit()
@@ -100,6 +107,7 @@ def get_messages(email):
     j = json.dumps(objects_list)
     return j
 
+
 def validate_token(email, token):
     user = query_db('SELECT email, token FROM signedin WHERE email = ? AND token = ?',
                     [email, token], one=True)
@@ -108,12 +116,21 @@ def validate_token(email, token):
     else:
         return True
 
+
 def add_active_user(email, token):
     query_db('INSERT INTO signedin(email, token) VALUES (?,?)', [email, token]);
     get_db().commit()
     print "Added token"
 
+
 def remove_active_user(token):
     query_db('DELETE FROM signedin WHERE token=?', [token]);
     get_db().commit()
     print "Removed token"
+
+
+def get_message_count(email):
+    count = query_db('SELECT COUNT(), fromUser FROM messages where toUser = ?', [email])
+    get_db().commit()
+    print count
+    return count
